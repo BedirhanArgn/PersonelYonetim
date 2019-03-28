@@ -19,16 +19,26 @@ namespace labproje3
         double ucrettotal;
         StreamWriter sw;
         int bazucret = 4500;
+        string[] Sutun = new string[100];
         int kontrol = 0;
         ArrayList personel = new ArrayList();
         Staff isci = new Staff();
+        int a = 0;
+
         public Form2()
         {
-            
+
             InitializeComponent();
+        }
+        public void listviewolustur()
+        {
+            lstListe.Columns.Add("Id", 30);
+            lstListe.Columns.Add("Ad ", 130);
+            lstListe.Columns.Add("Soyadı", 100);
         }
         public void dosyaoku()
         {
+
             if (File.Exists("stuff.csv"))
             {
                 using (var reader = new StreamReader("stuff.csv"))
@@ -38,12 +48,23 @@ namespace labproje3
                         var line = reader.ReadLine();
                         var values = line.Split(',');
                         personel.Add(line);
+                        for (int i = 0; i < 3; i++)
+                        {
+                            Sutun[a]= values[i].ToString();
+                             a++;
+                            
+                        }
+                            lstListe.Items.Add(new ListViewItem(Sutun));
+                        Array.Clear(Sutun,0,Sutun.Length);
+                        a = 0;
+
                         // depo.Add(values);
                         //Console.WriteLine(values[1]);
                     }
                     reader.Close();
                     reader.Dispose();
                 }
+
             }
             else
             {
@@ -91,9 +112,10 @@ namespace labproje3
         {
             groupboxdil.Visible = false;
             groupboxaile.Visible = false;
+            listviewolustur();
             dosyaoku();
         }
-    
+
         public double ucrethesabi()
         {
             if (cmbboxydb.SelectedIndex == 2 && rbingbilgisi.Checked == true || cmbboxydb.SelectedIndex == 2 && rbingilizceokul.Checked)
@@ -267,10 +289,10 @@ namespace labproje3
         private void btngeri_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
-            
+
             this.Close();
             f1.vericek();
-            
+
 
         }
 
@@ -302,6 +324,8 @@ namespace labproje3
             }
         }
 
-        
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

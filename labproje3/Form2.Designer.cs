@@ -74,7 +74,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btngeri = new System.Windows.Forms.Button();
             this.cmbboxydb = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstListe = new System.Windows.Forms.ListView();
             this.groupboxaile.SuspendLayout();
             this.groupboxcocuk.SuspendLayout();
             this.groupboxdil.SuspendLayout();
@@ -91,7 +91,7 @@
             this.groupboxaile.Controls.Add(this.textBox1);
             this.groupboxaile.Controls.Add(this.label13);
             this.groupboxaile.Controls.Add(this.chcbox718);
-            this.groupboxaile.Location = new System.Drawing.Point(350, 300);
+            this.groupboxaile.Location = new System.Drawing.Point(387, 300);
             this.groupboxaile.Name = "groupboxaile";
             this.groupboxaile.Size = new System.Drawing.Size(234, 140);
             this.groupboxaile.TabIndex = 66;
@@ -197,7 +197,7 @@
             this.groupboxcocuk.Controls.Add(this.chc2cocuk);
             this.groupboxcocuk.Controls.Add(this.chc1cocuk);
             this.groupboxcocuk.Controls.Add(this.chcocukyok);
-            this.groupboxcocuk.Location = new System.Drawing.Point(350, 143);
+            this.groupboxcocuk.Location = new System.Drawing.Point(425, 133);
             this.groupboxcocuk.Name = "groupboxcocuk";
             this.groupboxcocuk.Size = new System.Drawing.Size(177, 151);
             this.groupboxcocuk.TabIndex = 65;
@@ -558,20 +558,25 @@
             this.cmbboxydb.TabIndex = 68;
             this.cmbboxydb.SelectedIndexChanged += new System.EventHandler(this.cmbboxydb_SelectedIndexChanged);
             // 
-            // listView1
+            // lstListe
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(311, 347);
-            this.listView1.TabIndex = 69;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lstListe.FullRowSelect = true;
+            this.lstListe.GridLines = true;
+            this.lstListe.Location = new System.Drawing.Point(12, 12);
+            this.lstListe.MultiSelect = false;
+            this.lstListe.Name = "lstListe";
+            this.lstListe.Size = new System.Drawing.Size(329, 392);
+            this.lstListe.TabIndex = 69;
+            this.lstListe.UseCompatibleStateImageBehavior = false;
+            this.lstListe.View = System.Windows.Forms.View.Details;
+            this.lstListe.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 593);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lstListe);
             this.Controls.Add(this.cmbboxydb);
             this.Controls.Add(this.btngeri);
             this.Controls.Add(this.groupboxaile);
@@ -661,6 +666,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btngeri;
         private System.Windows.Forms.ComboBox cmbboxydb;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstListe;
     }
 }
