@@ -25,3 +25,13 @@ C:\Users\argunpc\Desktop\labproje3-v2\labproje3\obj\Debug\labproje3.csprojResolv
 C:\Users\argunpc\Desktop\labproje3-v2\labproje3\obj\Debug\labproje3.Form1.resources
 C:\Users\argunpc\Desktop\labproje3-v2\labproje3\obj\Debug\labproje3.Properties.Resources.resources
 C:\Users\argunpc\Desktop\labproje3-v2\labproje3\obj\Debug\labproje3.csproj.GenerateResource.Cache
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\bin\Debug\labproje3.exe.config
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\bin\Debug\labproje3.exe
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\bin\Debug\labproje3.pdb
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\obj\Debug\labproje3.csprojResolveAssemblyReference.cache
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\obj\Debug\labproje3.Form1.resources
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\obj\Debug\labproje3.Properties.Resources.resources
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\obj\Debug\labproje3.csproj.GenerateResource.Cache
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\obj\Debug\labproje3.exe
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\obj\Debug\labproje3.pdb
+C:\Users\argunpc\Desktop\labproje3-v3\labproje3\obj\Debug\labproje3.Form2.resources

@@ -19,7 +19,7 @@ namespace labproje3
         private int Yoneticilikgorevi;
         private int Ustogrenim;
         private double salary;
-        int bazucret = 4500;
+
         public string ID
         {
             get { return id; }
