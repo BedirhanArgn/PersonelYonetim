@@ -316,6 +316,7 @@
             this.btnsil.TabIndex = 63;
             this.btnsil.Text = "Sil";
             this.btnsil.UseVisualStyleBackColor = true;
+            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // btnupdate
             // 
@@ -328,12 +329,13 @@
             // 
             // btnadd
             // 
+            this.btnadd.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnadd.Location = new System.Drawing.Point(932, 44);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(94, 47);
             this.btnadd.TabIndex = 61;
             this.btnadd.Text = "Add";
-            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // cmbaile
@@ -537,12 +539,13 @@
             // 
             // btngeri
             // 
-            this.btngeri.Location = new System.Drawing.Point(868, 12);
+            this.btngeri.BackColor = System.Drawing.Color.Red;
+            this.btngeri.Location = new System.Drawing.Point(937, 542);
             this.btngeri.Name = "btngeri";
-            this.btngeri.Size = new System.Drawing.Size(75, 26);
+            this.btngeri.Size = new System.Drawing.Size(102, 39);
             this.btngeri.TabIndex = 67;
             this.btngeri.Text = "Geri";
-            this.btngeri.UseVisualStyleBackColor = true;
+            this.btngeri.UseVisualStyleBackColor = false;
             this.btngeri.Click += new System.EventHandler(this.btngeri_Click);
             // 
             // cmbboxydb
@@ -565,7 +568,7 @@
             this.lstListe.Location = new System.Drawing.Point(12, 12);
             this.lstListe.MultiSelect = false;
             this.lstListe.Name = "lstListe";
-            this.lstListe.Size = new System.Drawing.Size(329, 392);
+            this.lstListe.Size = new System.Drawing.Size(329, 472);
             this.lstListe.TabIndex = 69;
             this.lstListe.UseCompatibleStateImageBehavior = false;
             this.lstListe.View = System.Windows.Forms.View.Details;

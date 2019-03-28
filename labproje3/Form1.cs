@@ -34,9 +34,9 @@ namespace labproje3
         {
 
             DataTable dt = new DataTable();
-            
+
             string[] satirlar = File.ReadAllLines("stuff.csv");
-       
+
             string header = "ID,İsim,Soyadi,Adres,Aile,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Maas";
             if (satirlar.Length > 0)
             {
@@ -50,15 +50,19 @@ namespace labproje3
                 {
                     DataRow dr = dt.NewRow();
                     string[] veriler = satirlar[i].Split(',');
-                    int indexer =0;
-                    foreach (string headerword in basliklar)
+                    int indexer = 0;
+                    if (veriler.ToString() != "")
                     {
-                        dr[headerword] = veriler[indexer++];
-                    }  
-                    dt.Rows.Add(dr);
+                        foreach (string headerword in basliklar)
+                        {
+                            dr[headerword] = veriler[indexer++];
+                        }
+                        dt.Rows.Add(dr);
+                    }
+
                 }
             }
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 dataGridView1.DataSource = dt;
             }
@@ -81,6 +85,6 @@ namespace labproje3
         }
     }
 }
-  
 
-    
+
+

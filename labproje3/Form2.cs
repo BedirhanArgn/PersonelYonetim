@@ -50,12 +50,11 @@ namespace labproje3
                         personel.Add(line);
                         for (int i = 0; i < 3; i++)
                         {
-                            Sutun[a]= values[i].ToString();
-                             a++;
-                            
+                            Sutun[a] = values[i].ToString();
+                            a++;
                         }
-                            lstListe.Items.Add(new ListViewItem(Sutun));
-                        Array.Clear(Sutun,0,Sutun.Length);
+                        lstListe.Items.Add(new ListViewItem(Sutun));
+                        Array.Clear(Sutun, 0, Sutun.Length);
                         a = 0;
 
                         // depo.Add(values);
@@ -141,60 +140,60 @@ namespace labproje3
                 textboxdilsayisi.Visible = true;
             }
         }
-        //private void btnsil_Click(object sender, EventArgs e)
-        //{
-        //    int sayac = 0;
-        //    for (int i = 0; i < listboxgoster.Items.Count; i++)
-        //    {
-        //        if (listboxgoster.SelectedIndex == sayac)
-        //        {
+        private void btnsil_Click(object sender, EventArgs e)
+        {
+            int sayac = 0;
+            for (int i = 0; i < lstListe.Items.Count; i++)
+            {
+                if (lstListe.Items[sayac].Selected==true)
+                {
 
-        //            listboxgoster.Items.RemoveAt(sayac);
-        //            personel.RemoveAt(sayac);
-        //        }
-        //        sayac++;
-        //    }
-        //    if (listboxgoster.Items.Count > -1)
-        //    {
-        //        StreamWriter Yaz = new StreamWriter("stuff2.csv");
-        //        for (int i = 0; i < personel.Count; i++)
-        //        {
-        //            Yaz.WriteLine(personel[i]);
+                    lstListe.Items.RemoveAt(sayac);
+                    personel.RemoveAt(sayac);
+                }
+                sayac++;
+            }
+            if (lstListe.Items.Count > -1)
+            {
+                StreamWriter Yaz = new StreamWriter("stuff2.csv");
+                for (int i = 0; i < personel.Count; i++)
+                {
+                    Yaz.WriteLine(personel[i]);
 
-        //        }
-        //        Yaz.Close();
-        //        Yaz.Dispose();
-        //        File.Replace("stuff2.csv", "stuff.csv", "temp.csv");
-        //        //File.Delete("temp.csv");
-        //    }
-        //}
-        //private void btnupdate_Click(object sender, EventArgs e)
-        //{
-        //    int indx = 0;
-        //    for (int i = 0; i < listboxgoster.Items.Count; i++)
-        //    {
-        //        if (listboxgoster.SelectedIndex == indx)
-        //        {
-        //            listboxgoster.Items.RemoveAt(indx);
-        //            personel.RemoveAt(indx);
-        //            listboxgoster.Items.Insert(indx, txtboxid.Text.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString());
-        //            //listboxgoster.Items.Insert(indx, txtboxadd.Text.ToString());
-        //            personel.Insert(indx, txtboxid.Text.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + ucrettotal.ToString());
-        //        }
-        //        indx++;
-        //    }
-        //    if (listboxgoster.Items.Count > -1)
-        //    {
-        //        StreamWriter Yaz = new StreamWriter("stuff2.csv");
-        //        for (int i = 0; i < personel.Count; i++)
-        //        {
-        //            Yaz.WriteLine(personel[i]);
-        //        }
-        //        Yaz.Close();
-        //        Yaz.Dispose();
-        //        File.Replace("stuff2.csv", "stuff.csv", "temp.csv");
-        //    }
-        //}
+                }
+                Yaz.Close();
+                Yaz.Dispose();
+                File.Replace("stuff2.csv", "stuff.csv", "temp.csv");
+                //File.Delete("temp.csv");
+            }
+        }
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            int indx = 0;
+            for (int i = 0; i < lstListe.Items.Count; i++)
+            {
+                if (lstListe.Items[indx].Selected == true)
+                {
+                    lstListe.Items.RemoveAt(indx);
+                    personel.RemoveAt(indx);
+                    lstListe.Items.Insert(indx, txtboxid.Text.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString());
+                    //listboxgoster.Items.Insert(indx, txtboxadd.Text.ToString());
+                    personel.Insert(indx, txtboxid.Text.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + ucrettotal.ToString());
+                }
+                indx++;
+            }
+            if (lstListe.Items.Count > -1)
+            {
+                StreamWriter Yaz = new StreamWriter("stuff2.csv");
+                for (int i = 0; i < personel.Count; i++)
+                {
+                    Yaz.WriteLine(personel[i]);
+                }
+                Yaz.Close();
+                Yaz.Dispose();
+                File.Replace("stuff2.csv", "stuff.csv", "temp.csv");
+            }
+        }
 
         private void cmbaile_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -289,18 +288,13 @@ namespace labproje3
         private void btngeri_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
-
             this.Close();
             f1.vericek();
-
-
         }
-
         private void checkboxes_CheckedChanged_1(object sender, EventArgs e)
         {
             ucretaile += 0.20;
         }
-
         private void cmbboxydb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbboxydb.SelectedIndex == 2)
@@ -320,12 +314,12 @@ namespace labproje3
             {
                 rbingilizceokul.Checked = true;
                 groupboxdil.Visible = false;
-
             }
         }
-
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
+       
     }
 }
