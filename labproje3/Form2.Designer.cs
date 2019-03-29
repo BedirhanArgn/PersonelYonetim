@@ -326,6 +326,7 @@
             this.btnupdate.TabIndex = 62;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btnadd
             // 
@@ -352,6 +353,7 @@
             this.cmbaile.Size = new System.Drawing.Size(196, 24);
             this.cmbaile.TabIndex = 60;
             this.cmbaile.SelectedIndexChanged += new System.EventHandler(this.cmbaile_SelectedIndexChanged);
+            this.cmbaile.TextChanged += new System.EventHandler(this.cmbaile_TextChanged);
             // 
             // label11
             // 
@@ -378,6 +380,7 @@
             this.cmbboxyöneticilik.Name = "cmbboxyöneticilik";
             this.cmbboxyöneticilik.Size = new System.Drawing.Size(196, 24);
             this.cmbboxyöneticilik.TabIndex = 58;
+            this.cmbboxyöneticilik.TextChanged += new System.EventHandler(this.cmbboxyöneticilik_TextChanged);
             // 
             // label10
             // 
@@ -410,6 +413,7 @@
             this.cmbboxakademik.Name = "cmbboxakademik";
             this.cmbboxakademik.Size = new System.Drawing.Size(287, 24);
             this.cmbboxakademik.TabIndex = 54;
+            this.cmbboxakademik.TextChanged += new System.EventHandler(this.cmbboxakademik_TextChanged);
             // 
             // label7
             // 
@@ -440,6 +444,7 @@
             this.cmbboxil.Name = "cmbboxil";
             this.cmbboxil.Size = new System.Drawing.Size(182, 24);
             this.cmbboxil.TabIndex = 52;
+            this.cmbboxil.TextChanged += new System.EventHandler(this.cmbboxil_TextChanged);
             // 
             // label6
             // 
@@ -463,6 +468,7 @@
             this.cmbboxdeneyim.Name = "cmbboxdeneyim";
             this.cmbboxdeneyim.Size = new System.Drawing.Size(182, 24);
             this.cmbboxdeneyim.TabIndex = 50;
+            this.cmbboxdeneyim.TextChanged += new System.EventHandler(this.cmbboxdeneyim_TextChanged);
             // 
             // textboxadres
             // 
@@ -470,6 +476,7 @@
             this.textboxadres.Name = "textboxadres";
             this.textboxadres.Size = new System.Drawing.Size(100, 22);
             this.textboxadres.TabIndex = 49;
+            this.textboxadres.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textboxadres_KeyUp);
             // 
             // txtboxsoyadi
             // 
@@ -477,6 +484,7 @@
             this.txtboxsoyadi.Name = "txtboxsoyadi";
             this.txtboxsoyadi.Size = new System.Drawing.Size(100, 22);
             this.txtboxsoyadi.TabIndex = 48;
+            this.txtboxsoyadi.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxsoyadi_KeyUp);
             // 
             // txtboxisim
             // 
@@ -484,6 +492,7 @@
             this.txtboxisim.Name = "txtboxisim";
             this.txtboxisim.Size = new System.Drawing.Size(100, 22);
             this.txtboxisim.TabIndex = 47;
+            this.txtboxisim.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxisim_KeyUp);
             // 
             // txtboxid
             // 
@@ -491,6 +500,7 @@
             this.txtboxid.Name = "txtboxid";
             this.txtboxid.Size = new System.Drawing.Size(100, 22);
             this.txtboxid.TabIndex = 46;
+            this.txtboxid.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxid_KeyUp);
             // 
             // label5
             // 
@@ -560,6 +570,7 @@
             this.cmbboxydb.Size = new System.Drawing.Size(199, 24);
             this.cmbboxydb.TabIndex = 68;
             this.cmbboxydb.SelectedIndexChanged += new System.EventHandler(this.cmbboxydb_SelectedIndexChanged);
+            this.cmbboxydb.TextChanged += new System.EventHandler(this.cmbboxydb_TextChanged);
             // 
             // lstListe
             // 

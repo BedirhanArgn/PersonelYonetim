@@ -35,7 +35,7 @@
             // 
             // btnduzenle
             // 
-            this.btnduzenle.Location = new System.Drawing.Point(24, 286);
+            this.btnduzenle.Location = new System.Drawing.Point(24, 464);
             this.btnduzenle.Name = "btnduzenle";
             this.btnduzenle.Size = new System.Drawing.Size(90, 36);
             this.btnduzenle.TabIndex = 1;
@@ -48,11 +48,11 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1135, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(1399, 331);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 

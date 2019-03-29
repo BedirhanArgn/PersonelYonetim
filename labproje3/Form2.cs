@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 using System.IO;
-
 namespace labproje3
 {
     public partial class Form2 : Form
@@ -17,6 +16,17 @@ namespace labproje3
         double ucretydb;
         double ucretaile;
         double ucrettotal;
+        string asgarimaasi;
+        string id;
+        string name;
+        string surname;
+        string deneyim;
+        string akademikderece;
+        string Yoneticilik;
+        string yabancidil;
+        string ailedurum;
+        string adres;
+        string calisilanil;
         StreamWriter sw;
         int bazucret = 4500;
         string[] Sutun = new string[100];
@@ -24,7 +34,6 @@ namespace labproje3
         ArrayList personel = new ArrayList();
         Staff isci = new Staff();
         int a = 0;
-
         public Form2()
         {
 
@@ -48,14 +57,22 @@ namespace labproje3
                         var line = reader.ReadLine();
                         var values = line.Split(',');
                         personel.Add(line);
-                        for (int i = 0; i < 3; i++)
+                        if (values[0].ToString() == "")
                         {
-                            Sutun[a] = values[i].ToString();
-                            a++;
+                            lstListe.Visible = false;
                         }
-                        lstListe.Items.Add(new ListViewItem(Sutun));
-                        Array.Clear(Sutun, 0, Sutun.Length);
-                        a = 0;
+                        else
+                        {
+                            lstListe.Visible = true;
+                            for (int i = 0; i < 3; i++)
+                            {
+                                Sutun[a] = values[i].ToString();
+                                a++;
+                            }
+                            lstListe.Items.Add(new ListViewItem(Sutun));
+                            Array.Clear(Sutun, 0, Sutun.Length);
+                            a = 0;
+                        }
 
                         // depo.Add(values);
                         //Console.WriteLine(values[1]);
@@ -105,8 +122,14 @@ namespace labproje3
             string yazdir = txtboxid.Text.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + ucrettotal.ToString();
             dosyayaz(yazdir);
             personel.Add(yazdir);
-        }
 
+            string[] sutun = new string[3];
+            sutun[0] = txtboxid.Text;
+            sutun[1] = txtboxisim.Text ;
+            sutun[2] = txtboxsoyadi.Text;
+            lstListe.Items.Add(new ListViewItem(sutun));
+
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             groupboxdil.Visible = false;
@@ -114,7 +137,6 @@ namespace labproje3
             listviewolustur();
             dosyaoku();
         }
-
         public double ucrethesabi()
         {
             if (cmbboxydb.SelectedIndex == 2 && rbingbilgisi.Checked == true || cmbboxydb.SelectedIndex == 2 && rbingilizceokul.Checked)
@@ -131,7 +153,6 @@ namespace labproje3
             }
             ucrettotal = (bazucret * (isci.calisilanil + isci.Deneyim + isci.ustogrenim + ucretaile + ucretydb + isci.yoneticilikgorevi + 1.0));
             return ucrettotal;
-
         }
         private void checkBoxing3_CheckedChanged(object sender, EventArgs e)
         {
@@ -145,7 +166,7 @@ namespace labproje3
             int sayac = 0;
             for (int i = 0; i < lstListe.Items.Count; i++)
             {
-                if (lstListe.Items[sayac].Selected==true)
+                if (lstListe.Items[sayac].Selected == true)
                 {
 
                     lstListe.Items.RemoveAt(sayac);
@@ -169,16 +190,34 @@ namespace labproje3
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
+            id= txtboxid.Text;
+            isci.ID = id;
+            name=txtboxisim.Text;
+            isci.Name = name;
+             surname=txtboxsoyadi.Text;
+            isci.Surname = surname;
+            deneyim = cmbboxdeneyim.Text;
+            calisilanil = cmbboxil.Text;
+            akademikderece = cmbboxakademik.Text;
+            yabancidil = cmbboxydb.Text;
+            Yoneticilik = cmbboxyöneticilik.Text;
+            ailedurum = cmbaile.Text;
+            adres = textboxadres.Text;
+            string[] sutun=new string[10];
             int indx = 0;
-            for (int i = 0; i < lstListe.Items.Count; i++)
+            while (true)
             {
-                if (lstListe.Items[indx].Selected == true)
+                if (lstListe.SelectedItems[0] == lstListe.Items[indx])
                 {
                     lstListe.Items.RemoveAt(indx);
                     personel.RemoveAt(indx);
-                    lstListe.Items.Insert(indx, txtboxid.Text.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString());
-                    //listboxgoster.Items.Insert(indx, txtboxadd.Text.ToString());
-                    personel.Insert(indx, txtboxid.Text.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + ucrettotal.ToString());
+                    sutun[0] = id;
+                    sutun[1] = name;
+                    sutun[2] = surname;
+                    lstListe.Items.Insert(indx, new ListViewItem(sutun));
+                    ucrethesabi();
+                    personel.Insert(indx, id + "," + name + "," + surname + "," + adres + "," + ailedurum + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," + ucrettotal.ToString());
+                    break;
                 }
                 indx++;
             }
@@ -188,13 +227,13 @@ namespace labproje3
                 for (int i = 0; i < personel.Count; i++)
                 {
                     Yaz.WriteLine(personel[i]);
+                    
                 }
                 Yaz.Close();
                 Yaz.Dispose();
                 File.Replace("stuff2.csv", "stuff.csv", "temp.csv");
             }
         }
-
         private void cmbaile_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbaile.SelectedIndex == 0) //Evli ve esi çalışmıyor
@@ -272,7 +311,6 @@ namespace labproje3
             }
 
         }
-
         private void chcbox18_CheckedChanged(object sender, EventArgs e)
         {
             if (cmbaile.SelectedIndex == 4 && kontrol == 1 && chcbox718.Checked)
@@ -284,12 +322,12 @@ namespace labproje3
                 ucretaile = ucretaile + 0.40;
             }
         }
-
         private void btngeri_Click(object sender, EventArgs e)
-        {
+        {   
             Form1 f1 = new Form1();
-            this.Close();
             f1.vericek();
+            this.Close();
+            
         }
         private void checkboxes_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -318,8 +356,129 @@ namespace labproje3
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int indx = 0;
+            for (int i = 0; i < lstListe.Items.Count; i++)
+            {
+                if (lstListe.Items[indx].Selected == true)
+                {
+                    string kelime = personel[indx].ToString();
+                    string[] bolunecekkelime = kelime.Split(',');
+                    txtboxid.Text = bolunecekkelime[0];
+                    txtboxisim.Text = bolunecekkelime[1];
+                    txtboxsoyadi.Text = bolunecekkelime[2];
+                    textboxadres.Text = bolunecekkelime[3];
+                    cmbaile.Text = bolunecekkelime[4];
+                    cmbboxakademik.Text = bolunecekkelime[5];
+                    cmbboxdeneyim.Text = bolunecekkelime[6];
+                    cmbboxyöneticilik.Text = bolunecekkelime[7];
+                    cmbboxydb.Text = bolunecekkelime[8];
+                    cmbboxil.Text = bolunecekkelime[9];
+                    asgarimaasi = bolunecekkelime[10];
+                }
+                indx++;
+            }
+
+
+
+        }
+
+        private void Form2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            DialogResult giriskapanis = MessageBox.Show("Programı kapatmak istediğinizden eminmisiniz ? ", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (giriskapanis == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
+
+            }
+            Environment.Exit(0);
+        }
+
+        private void txtboxid_KeyUp(object sender, KeyEventArgs e)
+       {
+            id = txtboxid.Text;
+                }
+
+        private void txtboxisim_KeyUp(object sender, KeyEventArgs e)
+        {
+            name = txtboxisim.Text;
+
+        }
+
+        private void txtboxsoyadi_KeyUp(object sender, KeyEventArgs e)
+        {
+            surname = txtboxsoyadi.Text;
+        }
+
+   
+
+
+   
+        private void textboxadres_KeyUp(object sender, KeyEventArgs e)
+        {
+            adres = textboxadres.Text;
         }
 
        
+
+        private void cmbboxdeneyim_TextChanged(object sender, EventArgs e)
+        {
+            deneyim = cmbboxdeneyim.Text;
+            for (int i = 0; i < cmbboxdeneyim.Items.Count; i++)
+            {
+                if (cmbboxdeneyim.Items[i].ToString() == cmbboxdeneyim.Text)
+                {
+                    isci.Deneyim = i;
+                }
+            }
+        }
+
+        private void cmbaile_TextChanged(object sender, EventArgs e)
+        {
+            ailedurum = cmbaile.Text;
+
+        }
+
+        private void cmbboxyöneticilik_TextChanged(object sender, EventArgs e)
+        {
+            Yoneticilik = cmbboxyöneticilik.Text;
+            for (int i = 0; i < cmbboxyöneticilik.Items.Count; i++)
+            {
+                if (cmbboxyöneticilik.Items[i].ToString() == cmbboxyöneticilik.Text)
+                {
+                    isci.yoneticilikgorevi = i;
+                }
+            }
+        }
+
+        private void cmbboxydb_TextChanged(object sender, EventArgs e)
+        {
+            yabancidil = cmbboxydb.Text;
+        }
+
+        private void cmbboxakademik_TextChanged(object sender, EventArgs e)
+        {
+            akademikderece = cmbboxakademik.Text;
+            for (int i = 0; i < cmbboxakademik.Items.Count; i++)
+            {
+                if (cmbboxakademik.Items[i].ToString() == cmbboxakademik.Text)
+                {
+                    isci.ustogrenim = i;
+                }
+            }
+        }
+
+        private void cmbboxil_TextChanged(object sender, EventArgs e)
+        {
+            calisilanil = cmbboxil.Text;
+            for (int i = 0; i < cmbboxil.Items.Count; i++)
+            {
+                if (cmbboxil.Items[i].ToString() == cmbboxil.Text)
+                {
+                    isci.calisilanil = i;
+                }
+            }
+        }
     }
 }

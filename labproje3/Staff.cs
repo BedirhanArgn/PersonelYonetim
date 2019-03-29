@@ -56,7 +56,6 @@ namespace labproje3
         {
             get
             {
-
                 if (deneyim == 0)
                 {
                     return 0.60;
