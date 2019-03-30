@@ -73,9 +73,13 @@
             this.btngeri = new System.Windows.Forms.Button();
             this.cmbboxydb = new System.Windows.Forms.ComboBox();
             this.lstListe = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picturestuff = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupboxaile.SuspendLayout();
             this.groupboxcocuk.SuspendLayout();
             this.groupboxdil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturestuff)).BeginInit();
             this.SuspendLayout();
             // 
             // groupboxaile
@@ -89,7 +93,7 @@
             this.groupboxaile.Controls.Add(this.textBox1);
             this.groupboxaile.Controls.Add(this.label13);
             this.groupboxaile.Controls.Add(this.chcbox718);
-            this.groupboxaile.Location = new System.Drawing.Point(387, 300);
+            this.groupboxaile.Location = new System.Drawing.Point(386, 295);
             this.groupboxaile.Name = "groupboxaile";
             this.groupboxaile.Size = new System.Drawing.Size(234, 140);
             this.groupboxaile.TabIndex = 66;
@@ -418,7 +422,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(627, 292);
+            this.label7.Location = new System.Drawing.Point(626, 295);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 17);
             this.label7.TabIndex = 53;
@@ -440,7 +444,7 @@
             "Balıkesir, Çanakkale",
             "Antalya, Isparta, Burdur",
             "Diğer İller"});
-            this.cmbboxil.Location = new System.Drawing.Point(720, 246);
+            this.cmbboxil.Location = new System.Drawing.Point(716, 161);
             this.cmbboxil.Name = "cmbboxil";
             this.cmbboxil.Size = new System.Drawing.Size(182, 24);
             this.cmbboxil.TabIndex = 52;
@@ -449,7 +453,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(634, 249);
+            this.label6.Location = new System.Drawing.Point(609, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 17);
             this.label6.TabIndex = 51;
@@ -464,7 +468,7 @@
             "10-14",
             "15-20",
             "20 Yıl Üstü"});
-            this.cmbboxdeneyim.Location = new System.Drawing.Point(720, 210);
+            this.cmbboxdeneyim.Location = new System.Drawing.Point(715, 130);
             this.cmbboxdeneyim.Name = "cmbboxdeneyim";
             this.cmbboxdeneyim.Size = new System.Drawing.Size(182, 24);
             this.cmbboxdeneyim.TabIndex = 50;
@@ -472,32 +476,32 @@
             // 
             // textboxadres
             // 
-            this.textboxadres.Location = new System.Drawing.Point(764, 170);
+            this.textboxadres.Location = new System.Drawing.Point(764, 91);
             this.textboxadres.Name = "textboxadres";
-            this.textboxadres.Size = new System.Drawing.Size(100, 22);
+            this.textboxadres.Size = new System.Drawing.Size(149, 22);
             this.textboxadres.TabIndex = 49;
             this.textboxadres.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textboxadres_KeyUp);
             // 
             // txtboxsoyadi
             // 
-            this.txtboxsoyadi.Location = new System.Drawing.Point(764, 128);
+            this.txtboxsoyadi.Location = new System.Drawing.Point(764, 56);
             this.txtboxsoyadi.Name = "txtboxsoyadi";
-            this.txtboxsoyadi.Size = new System.Drawing.Size(100, 22);
+            this.txtboxsoyadi.Size = new System.Drawing.Size(149, 22);
             this.txtboxsoyadi.TabIndex = 48;
             this.txtboxsoyadi.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxsoyadi_KeyUp);
             // 
             // txtboxisim
             // 
-            this.txtboxisim.Location = new System.Drawing.Point(764, 89);
+            this.txtboxisim.Location = new System.Drawing.Point(764, 22);
             this.txtboxisim.Name = "txtboxisim";
-            this.txtboxisim.Size = new System.Drawing.Size(100, 22);
+            this.txtboxisim.Size = new System.Drawing.Size(149, 22);
             this.txtboxisim.TabIndex = 47;
             this.txtboxisim.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxisim_KeyUp);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(608, 213);
+            this.label5.Location = new System.Drawing.Point(609, 133);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 17);
             this.label5.TabIndex = 45;
@@ -506,7 +510,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(700, 175);
+            this.label4.Location = new System.Drawing.Point(712, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 44;
@@ -515,7 +519,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(694, 133);
+            this.label3.Location = new System.Drawing.Point(706, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 17);
             this.label3.TabIndex = 43;
@@ -524,7 +528,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(706, 92);
+            this.label2.Location = new System.Drawing.Point(713, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 17);
             this.label2.TabIndex = 42;
@@ -568,11 +572,38 @@
             this.lstListe.View = System.Windows.Forms.View.Details;
             this.lstListe.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(628, 191);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 17);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Fotograf";
+            // 
+            // picturestuff
+            // 
+            this.picturestuff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturestuff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picturestuff.Location = new System.Drawing.Point(716, 191);
+            this.picturestuff.Name = "picturestuff";
+            this.picturestuff.Size = new System.Drawing.Size(114, 80);
+            this.picturestuff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturestuff.TabIndex = 71;
+            this.picturestuff.TabStop = false;
+            this.picturestuff.Click += new System.EventHandler(this.picturestuff_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "filedialog";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 593);
+            this.Controls.Add(this.picturestuff);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lstListe);
             this.Controls.Add(this.cmbboxydb);
             this.Controls.Add(this.btngeri);
@@ -608,6 +639,7 @@
             this.groupboxcocuk.PerformLayout();
             this.groupboxdil.ResumeLayout(false);
             this.groupboxdil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturestuff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,5 +692,8 @@
         private System.Windows.Forms.Button btngeri;
         private System.Windows.Forms.ComboBox cmbboxydb;
         private System.Windows.Forms.ListView lstListe;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox picturestuff;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

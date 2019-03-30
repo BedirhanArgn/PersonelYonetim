@@ -19,7 +19,7 @@ namespace labproje3
         private int Yoneticilikgorevi;
         private int Ustogrenim;
         private double salary;
-
+        private string imagepath;
         public string ID
         {
             get { return id; }
@@ -44,14 +44,6 @@ namespace labproje3
             get { return address; }
             set { address = value; }
         }
-        //public double Salary
-        //{
-        //    get
-        //    {
-        //        Salary1 =(bazucret * (Deneyim + ustogrenim + ailedurum + ydbdil + yoneticilikgorevi + 1.0));
-        //        return Salary1;
-        //    }
-        //}
         public double Deneyim
         {
             get
@@ -209,6 +201,19 @@ namespace labproje3
             set
             {
                 salary = value;
+            }
+        }
+
+        public string Imagepath
+        {
+            get
+            {
+                return imagepath;
+            }
+
+            set
+            {
+                imagepath = value;
             }
         }
     }

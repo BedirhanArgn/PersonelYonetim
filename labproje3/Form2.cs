@@ -16,8 +16,7 @@ namespace labproje3
         double ucretydb;
         double ucretaile;
         double ucrettotal;
-        string asgarimaasi;
-        string id;
+        string asgarimaasi;  
         string name;
         string surname;
         string deneyim;
@@ -26,6 +25,7 @@ namespace labproje3
         string yabancidil;
         string ailedurum;
         string adres;
+        string imageyolu;
         string calisilanil;
         StreamWriter sw;
         int bazucret = 4500;
@@ -48,8 +48,8 @@ namespace labproje3
         }
         public void dosyaoku()
         {
-           
-            
+
+
             if (File.Exists("stuff.csv"))
             {
 
@@ -71,7 +71,7 @@ namespace labproje3
                             lstListe.Visible = true;
                             for (int i = 0; i < 3; i++)
                             {
-                              
+
                                 Sutun[a] = values[i].ToString();
                                 a++;
                             }
@@ -102,7 +102,7 @@ namespace labproje3
             else
             {
                 dosyaolustur();
-               
+
             }
         }
         public void dosyaolustur()
@@ -115,6 +115,7 @@ namespace labproje3
         {
             idsayisi++;
             isci.ID = idsayisi.ToString();
+            isci.Imagepath = imageyolu;
             isci.Name = txtboxisim.ToString();
             isci.Surname = txtboxsoyadi.ToString();
             isci.Address = textboxadres.ToString();
@@ -125,13 +126,13 @@ namespace labproje3
             isci.ailedurum = ucretaile;
             isci.calisilanil = cmbboxil.SelectedIndex;
             isci.Salary1 = ucrethesabi();
-            string yazdir = idsayisi.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + ucrettotal.ToString();
+            string yazdir = idsayisi.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + ucrettotal.ToString() + "," + imageyolu;
             dosyayaz(yazdir);
             personel.Add(yazdir);
 
             string[] sutun = new string[3];
             sutun[0] = idsayisi.ToString();
-            sutun[1] = txtboxisim.Text ;
+            sutun[1] = txtboxisim.Text;
             sutun[2] = txtboxsoyadi.Text;
             lstListe.Items.Add(new ListViewItem(sutun));
             MessageBox.Show("Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -199,11 +200,11 @@ namespace labproje3
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            // id= txtboxid.Text;
             Form1 f1 = new Form1();
-                 name =txtboxisim.Text;
+            name = txtboxisim.Text;
             isci.Name = name;
-             surname=txtboxsoyadi.Text;
+            isci.Imagepath = imageyolu;
+            surname = txtboxsoyadi.Text;
             isci.Surname = surname;
             deneyim = cmbboxdeneyim.Text;
             calisilanil = cmbboxil.Text;
@@ -212,7 +213,7 @@ namespace labproje3
             Yoneticilik = cmbboxyöneticilik.Text;
             ailedurum = cmbaile.Text;
             adres = textboxadres.Text;
-            string[] sutun=new string[10];
+            string[] sutun = new string[10];
             int indx = 0;
             string eskiid;
             while (true)
@@ -229,7 +230,7 @@ namespace labproje3
                     lstListe.Items.Insert(indx, new ListViewItem(sutun));
                     ucrethesabi();
                     idsayisi++;
-                    personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ailedurum + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," + ucrettotal.ToString());
+                    personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ailedurum + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," + ucrettotal.ToString() + "," + isci.Imagepath);
                     break;
                 }
                 indx++;
@@ -240,12 +241,12 @@ namespace labproje3
                 for (int i = 0; i < personel.Count; i++)
                 {
                     Yaz.WriteLine(personel[i]);
-            }
+                }
                 Yaz.Close();
                 Yaz.Dispose();
                 MessageBox.Show("Guncelleme Yapıldı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                File.Replace("stuff2.csv", f1.Yol ,"temp.csv");
+                File.Replace("stuff2.csv", f1.Yol, "temp.csv");
             }
         }
         private void cmbaile_SelectedIndexChanged(object sender, EventArgs e)
@@ -337,11 +338,11 @@ namespace labproje3
             }
         }
         private void btngeri_Click(object sender, EventArgs e)
-        {   
+        {
             Form1 f1 = new Form1();
             f1.vericek();
             this.Close();
-            
+
         }
         private void checkboxes_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -377,7 +378,7 @@ namespace labproje3
                 {
                     string kelime = personel[indx].ToString();
                     string[] bolunecekkelime = kelime.Split(',');
-                  //  txtboxid.Text = bolunecekkelime[0];
+                    //  txtboxid.Text = bolunecekkelime[0];
                     txtboxisim.Text = bolunecekkelime[1];
                     txtboxsoyadi.Text = bolunecekkelime[2];
                     textboxadres.Text = bolunecekkelime[3];
@@ -388,12 +389,11 @@ namespace labproje3
                     cmbboxydb.Text = bolunecekkelime[8];
                     cmbboxil.Text = bolunecekkelime[9];
                     asgarimaasi = bolunecekkelime[10];
+                    imageyolu = bolunecekkelime[11];
+                    resimyukle(imageyolu);
                 }
                 indx++;
             }
-
-
-
         }
         private void Form2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -408,9 +408,9 @@ namespace labproje3
             Environment.Exit(0);
         }
         private void txtboxid_KeyUp(object sender, KeyEventArgs e)
-       {
-           // id = txtboxid.Text;
-                }
+        {
+            // id = txtboxid.Text;
+        }
         private void txtboxisim_KeyUp(object sender, KeyEventArgs e)
         {
             name = txtboxisim.Text;
@@ -420,17 +420,17 @@ namespace labproje3
         {
             surname = txtboxsoyadi.Text;
         }
-     
-   
 
 
-   
+
+
+
         private void textboxadres_KeyUp(object sender, KeyEventArgs e)
         {
             adres = textboxadres.Text;
         }
 
-       
+
 
         private void cmbboxdeneyim_TextChanged(object sender, EventArgs e)
         {
@@ -489,6 +489,44 @@ namespace labproje3
                     isci.calisilanil = i;
                 }
             }
+        }
+
+        private void picturestuff_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);    // masaüstünü göstermesi için
+            openFileDialog1.Filter = "JPEG (*.jpg; *jpeg; *jpe)|*.jpg; *jpeg; *jpe|All files (*.*)|*.*";        // dosya filtrelemesi
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                    {
+                        using (myStream)
+                        {
+                            foreach (string s in openFileDialog1.FileNames)     // multi select özelliği için kullanılabilir
+                            {
+                                picturestuff.ImageLocation = s;
+                                imageyolu = picturestuff.ImageLocation;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hata: Dosya okunamadı!" + ex.Message);
+                }
+
+            }
+        }
+        public void resimyukle(string veriyolu)
+        {
+            Image image = Image.FromFile(veriyolu);
+            picturestuff.Image = image;
         }
     }
 }
