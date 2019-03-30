@@ -91,7 +91,7 @@
             // chcbox06
             // 
             this.chcbox06.AutoSize = true;
-            this.chcbox06.Location = new System.Drawing.Point(9, 55);
+            this.chcbox06.Location = new System.Drawing.Point(6, 21);
             this.chcbox06.Name = "chcbox06";
             this.chcbox06.Size = new System.Drawing.Size(77, 21);
             this.chcbox06.TabIndex = 33;
@@ -102,7 +102,7 @@
             // chcbox18
             // 
             this.chcbox18.AutoSize = true;
-            this.chcbox18.Location = new System.Drawing.Point(9, 109);
+            this.chcbox18.Location = new System.Drawing.Point(6, 75);
             this.chcbox18.Name = "chcbox18";
             this.chcbox18.Size = new System.Drawing.Size(51, 21);
             this.chcbox18.TabIndex = 35;
@@ -113,7 +113,7 @@
             // chcbox718
             // 
             this.chcbox718.AutoSize = true;
-            this.chcbox718.Location = new System.Drawing.Point(9, 82);
+            this.chcbox718.Location = new System.Drawing.Point(6, 48);
             this.chcbox718.Name = "chcbox718";
             this.chcbox718.Size = new System.Drawing.Size(59, 21);
             this.chcbox718.TabIndex = 34;
@@ -268,7 +268,7 @@
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(94, 50);
             this.btnupdate.TabIndex = 62;
-            this.btnupdate.Text = "Update";
+            this.btnupdate.Text = "Güncelle";
             this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
@@ -279,7 +279,7 @@
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(94, 47);
             this.btnadd.TabIndex = 61;
-            this.btnadd.Text = "Add";
+            this.btnadd.Text = "Ekle";
             this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
@@ -297,7 +297,7 @@
             this.cmbaile.Size = new System.Drawing.Size(196, 24);
             this.cmbaile.TabIndex = 60;
             this.cmbaile.SelectedIndexChanged += new System.EventHandler(this.cmbaile_SelectedIndexChanged);
-            this.cmbaile.TextChanged += new System.EventHandler(this.cmbaile_TextChanged);
+            this.cmbaile.DropDownClosed += new System.EventHandler(this.cmbaile_DropDownClosed);
             // 
             // label11
             // 
@@ -324,7 +324,7 @@
             this.cmbboxyöneticilik.Name = "cmbboxyöneticilik";
             this.cmbboxyöneticilik.Size = new System.Drawing.Size(196, 24);
             this.cmbboxyöneticilik.TabIndex = 58;
-            this.cmbboxyöneticilik.TextChanged += new System.EventHandler(this.cmbboxyöneticilik_TextChanged);
+            this.cmbboxyöneticilik.DropDownClosed += new System.EventHandler(this.cmbboxyöneticilik_DropDownClosed);
             // 
             // label10
             // 
@@ -357,7 +357,7 @@
             this.cmbboxakademik.Name = "cmbboxakademik";
             this.cmbboxakademik.Size = new System.Drawing.Size(287, 24);
             this.cmbboxakademik.TabIndex = 54;
-            this.cmbboxakademik.TextChanged += new System.EventHandler(this.cmbboxakademik_TextChanged);
+            this.cmbboxakademik.DropDownClosed += new System.EventHandler(this.cmbboxakademik_DropDownClosed);
             // 
             // label7
             // 
@@ -388,7 +388,7 @@
             this.cmbboxil.Name = "cmbboxil";
             this.cmbboxil.Size = new System.Drawing.Size(182, 24);
             this.cmbboxil.TabIndex = 52;
-            this.cmbboxil.TextChanged += new System.EventHandler(this.cmbboxil_TextChanged);
+            this.cmbboxil.DropDownClosed += new System.EventHandler(this.cmbboxil_DropDownClosed);
             // 
             // label6
             // 
@@ -412,7 +412,7 @@
             this.cmbboxdeneyim.Name = "cmbboxdeneyim";
             this.cmbboxdeneyim.Size = new System.Drawing.Size(182, 24);
             this.cmbboxdeneyim.TabIndex = 50;
-            this.cmbboxdeneyim.TextChanged += new System.EventHandler(this.cmbboxdeneyim_TextChanged);
+            this.cmbboxdeneyim.DropDownClosed += new System.EventHandler(this.cmbboxdeneyim_DropDownClosed);
             // 
             // textboxadres
             // 
@@ -497,7 +497,7 @@
             this.cmbboxydb.Size = new System.Drawing.Size(199, 24);
             this.cmbboxydb.TabIndex = 68;
             this.cmbboxydb.SelectedIndexChanged += new System.EventHandler(this.cmbboxydb_SelectedIndexChanged);
-            this.cmbboxydb.TextChanged += new System.EventHandler(this.cmbboxydb_TextChanged);
+            this.cmbboxydb.DropDownClosed += new System.EventHandler(this.cmbboxydb_DropDownClosed);
             // 
             // lstListe
             // 
