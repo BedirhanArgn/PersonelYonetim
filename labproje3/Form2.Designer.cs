@@ -29,14 +29,8 @@
         private void InitializeComponent()
         {
             this.groupboxaile = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.chcbox06 = new System.Windows.Forms.CheckBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.chcbox18 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.chcbox718 = new System.Windows.Forms.CheckBox();
             this.checkboxes = new System.Windows.Forms.CheckBox();
             this.groupboxcocuk = new System.Windows.Forms.GroupBox();
@@ -84,14 +78,8 @@
             // 
             // groupboxaile
             // 
-            this.groupboxaile.Controls.Add(this.textBox3);
             this.groupboxaile.Controls.Add(this.chcbox06);
-            this.groupboxaile.Controls.Add(this.label14);
-            this.groupboxaile.Controls.Add(this.label12);
             this.groupboxaile.Controls.Add(this.chcbox18);
-            this.groupboxaile.Controls.Add(this.textBox2);
-            this.groupboxaile.Controls.Add(this.textBox1);
-            this.groupboxaile.Controls.Add(this.label13);
             this.groupboxaile.Controls.Add(this.chcbox718);
             this.groupboxaile.Location = new System.Drawing.Point(386, 295);
             this.groupboxaile.Name = "groupboxaile";
@@ -99,13 +87,6 @@
             this.groupboxaile.TabIndex = 66;
             this.groupboxaile.TabStop = false;
             this.groupboxaile.Text = "Aile";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(187, 112);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(41, 22);
-            this.textBox3.TabIndex = 39;
             // 
             // chcbox06
             // 
@@ -118,24 +99,6 @@
             this.chcbox06.UseVisualStyleBackColor = true;
             this.chcbox06.CheckedChanged += new System.EventHandler(this.chcbox06_CheckedChanged);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(89, 110);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 17);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "Çocuk Sayisi";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(89, 57);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 17);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Çocuk Sayisi";
-            // 
             // chcbox18
             // 
             this.chcbox18.AutoSize = true;
@@ -146,29 +109,6 @@
             this.chcbox18.Text = "18-";
             this.chcbox18.UseVisualStyleBackColor = true;
             this.chcbox18.CheckedChanged += new System.EventHandler(this.chcbox18_CheckedChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(187, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(41, 22);
-            this.textBox2.TabIndex = 37;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(187, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(41, 22);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(89, 82);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(88, 17);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Çocuk Sayisi";
             // 
             // chcbox718
             // 
@@ -649,14 +589,8 @@
 
         private System.Windows.Forms.GroupBox groupboxaile;
         private System.Windows.Forms.CheckBox checkboxes;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.CheckBox chcbox06;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox chcbox18;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox chcbox718;
         private System.Windows.Forms.GroupBox groupboxcocuk;
         private System.Windows.Forms.CheckBox chcbekar;

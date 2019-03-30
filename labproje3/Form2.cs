@@ -16,7 +16,7 @@ namespace labproje3
         double ucretydb;
         double ucretaile;
         double ucrettotal;
-        string asgarimaasi;  
+        string asgarimaasi;
         string name;
         string surname;
         string deneyim;
@@ -48,11 +48,10 @@ namespace labproje3
         }
         public void dosyaoku()
         {
-
-
-            if (File.Exists("stuff.csv"))
+            try
             {
-
+  if (File.Exists("stuff.csv"))
+            {
                 Form1 f1 = new Form1();
                 using (var reader = new StreamReader(f1.Yol))
                 {
@@ -89,6 +88,12 @@ namespace labproje3
             {
                 dosyaolustur();
             }
+            }
+            catch
+            {
+                MessageBox.Show("Yukleme Basarisiz Oldu");
+            }
+          
         }
         public void dosyayaz(string yazdir)
         {
@@ -113,29 +118,36 @@ namespace labproje3
         }
         private void btnadd_Click(object sender, EventArgs e)
         {
-            idsayisi++;
-            isci.ID = idsayisi.ToString();
-            isci.Imagepath = imageyolu;
-            isci.Name = txtboxisim.ToString();
-            isci.Surname = txtboxsoyadi.ToString();
-            isci.Address = textboxadres.ToString();
-            isci.ydbdil = ucretydb;
-            isci.ustogrenim = cmbboxakademik.SelectedIndex;
-            isci.yoneticilikgorevi = cmbboxyöneticilik.SelectedIndex;
-            isci.Deneyim = cmbboxdeneyim.SelectedIndex;
-            isci.ailedurum = ucretaile;
-            isci.calisilanil = cmbboxil.SelectedIndex;
-            isci.Salary1 = ucrethesabi();
-            string yazdir = idsayisi.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + ucrettotal.ToString() + "," + imageyolu;
-            dosyayaz(yazdir);
-            personel.Add(yazdir);
+            try
+            {
+                idsayisi++;
+                isci.ID = idsayisi.ToString();
+                isci.Imagepath = imageyolu;
+                isci.Name = txtboxisim.ToString();
+                isci.Surname = txtboxsoyadi.ToString();
+                isci.Address = textboxadres.ToString();
+                isci.ydbdil = ucretydb;
+                isci.ustogrenim = cmbboxakademik.SelectedIndex;
+                isci.yoneticilikgorevi = cmbboxyöneticilik.SelectedIndex;
+                isci.Deneyim = cmbboxdeneyim.SelectedIndex;
+                isci.ailedurum = ucretaile;
+                isci.calisilanil = cmbboxil.SelectedIndex;
+                isci.Salary1 = ucrethesabi();
+                string yazdir = idsayisi.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + ucrettotal.ToString() + "," + imageyolu;
+                dosyayaz(yazdir);
+                personel.Add(yazdir);
+                string[] sutun = new string[3];
+                sutun[0] = idsayisi.ToString();
+                sutun[1] = txtboxisim.Text;
+                sutun[2] = txtboxsoyadi.Text;
+                lstListe.Items.Add(new ListViewItem(sutun));
+                MessageBox.Show("Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Eklenemedi");
+            }
 
-            string[] sutun = new string[3];
-            sutun[0] = idsayisi.ToString();
-            sutun[1] = txtboxisim.Text;
-            sutun[2] = txtboxsoyadi.Text;
-            lstListe.Items.Add(new ListViewItem(sutun));
-            MessageBox.Show("Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         private void Form2_Load(object sender, EventArgs e)
@@ -171,35 +183,45 @@ namespace labproje3
         }
         private void btnsil_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
-            int sayac = 0;
-            for (int i = 0; i < lstListe.Items.Count; i++)
+            try
             {
-                if (lstListe.Items[sayac].Selected == true)
+                Form1 f1 = new Form1();
+                int sayac = 0;
+                for (int i = 0; i < lstListe.Items.Count; i++)
                 {
+                    if (lstListe.Items[sayac].Selected == true)
+                    {
 
-                    lstListe.Items.RemoveAt(sayac);
-                    personel.RemoveAt(sayac);
+                        lstListe.Items.RemoveAt(sayac);
+                        personel.RemoveAt(sayac);
+                    }
+                    sayac++;
                 }
-                sayac++;
+                if (lstListe.Items.Count > -1)
+                {
+                    StreamWriter Yaz = new StreamWriter("stuff2.csv");
+                    for (int i = 0; i < personel.Count; i++)
+                    {
+                        Yaz.WriteLine(personel[i]);
+
+                    }
+                    Yaz.Close();
+                    idsayisi--;
+                    Yaz.Dispose();
+                    File.Replace("stuff2.csv", f1.Yol, "temp.csv");
+                    File.Delete("stuff2.csv");
+                }
             }
-            if (lstListe.Items.Count > -1)
+            catch
             {
-                StreamWriter Yaz = new StreamWriter("stuff2.csv");
-                for (int i = 0; i < personel.Count; i++)
-                {
-                    Yaz.WriteLine(personel[i]);
-
-                }
-                Yaz.Close();
-                idsayisi--;
-                Yaz.Dispose();
-                File.Replace("stuff2.csv", f1.Yol, "temp.csv");
-                File.Delete("stuff2.csv");
+                MessageBox.Show("Silme Başarısız oldu");
             }
+
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
+            try
+            {
             Form1 f1 = new Form1();
             name = txtboxisim.Text;
             isci.Name = name;
@@ -248,6 +270,12 @@ namespace labproje3
 
                 File.Replace("stuff2.csv", f1.Yol, "temp.csv");
             }
+            }
+            catch
+            {
+                MessageBox.Show("Güncelleme basarısız oldu");
+            }
+          
         }
         private void cmbaile_SelectedIndexChanged(object sender, EventArgs e)
         {
