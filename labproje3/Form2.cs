@@ -29,7 +29,8 @@ namespace labproje3
         string calisilanil;
         StreamWriter sw;
         int bazucret = 4500;
-        string[] Sutun = new string[100];
+        int idsayisi;
+        string[] Sutun = new string[10];
         int kontrol = 0;
         ArrayList personel = new ArrayList();
         Staff isci = new Staff();
@@ -47,15 +48,19 @@ namespace labproje3
         }
         public void dosyaoku()
         {
-
+           
+            
             if (File.Exists("stuff.csv"))
             {
-                using (var reader = new StreamReader("stuff.csv"))
+
+                Form1 f1 = new Form1();
+                using (var reader = new StreamReader(f1.Yol))
                 {
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
                         var values = line.Split(',');
+                        idsayisi = Convert.ToInt32(values[0]);
                         personel.Add(line);
                         if (values[0].ToString() == "")
                         {
@@ -66,6 +71,7 @@ namespace labproje3
                             lstListe.Visible = true;
                             for (int i = 0; i < 3; i++)
                             {
+                              
                                 Sutun[a] = values[i].ToString();
                                 a++;
                             }
@@ -73,9 +79,6 @@ namespace labproje3
                             Array.Clear(Sutun, 0, Sutun.Length);
                             a = 0;
                         }
-
-                        // depo.Add(values);
-                        //Console.WriteLine(values[1]);
                     }
                     reader.Close();
                     reader.Dispose();
@@ -89,15 +92,17 @@ namespace labproje3
         }
         public void dosyayaz(string yazdir)
         {
+            Form1 f1 = new Form1();
             if (File.Exists("stuff.csv"))
             {
-                StreamWriter Yaz = new StreamWriter("stuff.csv", true);
+                StreamWriter Yaz = new StreamWriter(f1.Yol, true);
                 Yaz.WriteLine(yazdir);
                 Yaz.Close();
             }
             else
             {
                 dosyaolustur();
+               
             }
         }
         public void dosyaolustur()
@@ -108,7 +113,8 @@ namespace labproje3
         }
         private void btnadd_Click(object sender, EventArgs e)
         {
-            isci.ID = txtboxid.ToString();
+            idsayisi++;
+            isci.ID = idsayisi.ToString();
             isci.Name = txtboxisim.ToString();
             isci.Surname = txtboxsoyadi.ToString();
             isci.Address = textboxadres.ToString();
@@ -119,15 +125,16 @@ namespace labproje3
             isci.ailedurum = ucretaile;
             isci.calisilanil = cmbboxil.SelectedIndex;
             isci.Salary1 = ucrethesabi();
-            string yazdir = txtboxid.Text.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + ucrettotal.ToString();
+            string yazdir = idsayisi.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + ucrettotal.ToString();
             dosyayaz(yazdir);
             personel.Add(yazdir);
 
             string[] sutun = new string[3];
-            sutun[0] = txtboxid.Text;
+            sutun[0] = idsayisi.ToString();
             sutun[1] = txtboxisim.Text ;
             sutun[2] = txtboxsoyadi.Text;
             lstListe.Items.Add(new ListViewItem(sutun));
+            MessageBox.Show("Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         private void Form2_Load(object sender, EventArgs e)
@@ -163,6 +170,7 @@ namespace labproje3
         }
         private void btnsil_Click(object sender, EventArgs e)
         {
+            Form1 f1 = new Form1();
             int sayac = 0;
             for (int i = 0; i < lstListe.Items.Count; i++)
             {
@@ -183,16 +191,17 @@ namespace labproje3
 
                 }
                 Yaz.Close();
+                idsayisi--;
                 Yaz.Dispose();
-                File.Replace("stuff2.csv", "stuff.csv", "temp.csv");
-                //File.Delete("temp.csv");
+                File.Replace("stuff2.csv", f1.Yol, "temp.csv");
+                File.Delete("stuff2.csv");
             }
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            id= txtboxid.Text;
-            isci.ID = id;
-            name=txtboxisim.Text;
+            // id= txtboxid.Text;
+            Form1 f1 = new Form1();
+                 name =txtboxisim.Text;
             isci.Name = name;
              surname=txtboxsoyadi.Text;
             isci.Surname = surname;
@@ -205,18 +214,22 @@ namespace labproje3
             adres = textboxadres.Text;
             string[] sutun=new string[10];
             int indx = 0;
+            string eskiid;
             while (true)
             {
                 if (lstListe.SelectedItems[0] == lstListe.Items[indx])
                 {
+                    eskiid = lstListe.Items[indx].Text;
                     lstListe.Items.RemoveAt(indx);
                     personel.RemoveAt(indx);
-                    sutun[0] = id;
+                    idsayisi--;
+                    sutun[0] = eskiid;
                     sutun[1] = name;
                     sutun[2] = surname;
                     lstListe.Items.Insert(indx, new ListViewItem(sutun));
                     ucrethesabi();
-                    personel.Insert(indx, id + "," + name + "," + surname + "," + adres + "," + ailedurum + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," + ucrettotal.ToString());
+                    idsayisi++;
+                    personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ailedurum + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," + ucrettotal.ToString());
                     break;
                 }
                 indx++;
@@ -227,11 +240,12 @@ namespace labproje3
                 for (int i = 0; i < personel.Count; i++)
                 {
                     Yaz.WriteLine(personel[i]);
-                    
-                }
+            }
                 Yaz.Close();
                 Yaz.Dispose();
-                File.Replace("stuff2.csv", "stuff.csv", "temp.csv");
+                MessageBox.Show("Guncelleme Yapıldı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                File.Replace("stuff2.csv", f1.Yol ,"temp.csv");
             }
         }
         private void cmbaile_SelectedIndexChanged(object sender, EventArgs e)
@@ -363,7 +377,7 @@ namespace labproje3
                 {
                     string kelime = personel[indx].ToString();
                     string[] bolunecekkelime = kelime.Split(',');
-                    txtboxid.Text = bolunecekkelime[0];
+                  //  txtboxid.Text = bolunecekkelime[0];
                     txtboxisim.Text = bolunecekkelime[1];
                     txtboxsoyadi.Text = bolunecekkelime[2];
                     textboxadres.Text = bolunecekkelime[3];
@@ -381,7 +395,6 @@ namespace labproje3
 
 
         }
-
         private void Form2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
@@ -394,23 +407,20 @@ namespace labproje3
             }
             Environment.Exit(0);
         }
-
         private void txtboxid_KeyUp(object sender, KeyEventArgs e)
        {
-            id = txtboxid.Text;
+           // id = txtboxid.Text;
                 }
-
         private void txtboxisim_KeyUp(object sender, KeyEventArgs e)
         {
             name = txtboxisim.Text;
 
         }
-
         private void txtboxsoyadi_KeyUp(object sender, KeyEventArgs e)
         {
             surname = txtboxsoyadi.Text;
         }
-
+     
    
 
 

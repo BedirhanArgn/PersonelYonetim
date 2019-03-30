@@ -66,12 +66,10 @@
             this.textboxadres = new System.Windows.Forms.TextBox();
             this.txtboxsoyadi = new System.Windows.Forms.TextBox();
             this.txtboxisim = new System.Windows.Forms.TextBox();
-            this.txtboxid = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btngeri = new System.Windows.Forms.Button();
             this.cmbboxydb = new System.Windows.Forms.ComboBox();
             this.lstListe = new System.Windows.Forms.ListView();
@@ -310,22 +308,24 @@
             // 
             // btnsil
             // 
+            this.btnsil.BackColor = System.Drawing.Color.Red;
             this.btnsil.Location = new System.Drawing.Point(932, 210);
             this.btnsil.Name = "btnsil";
             this.btnsil.Size = new System.Drawing.Size(94, 50);
             this.btnsil.TabIndex = 63;
             this.btnsil.Text = "Sil";
-            this.btnsil.UseVisualStyleBackColor = true;
+            this.btnsil.UseVisualStyleBackColor = false;
             this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // btnupdate
             // 
+            this.btnupdate.BackColor = System.Drawing.Color.Orange;
             this.btnupdate.Location = new System.Drawing.Point(932, 128);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(94, 50);
             this.btnupdate.TabIndex = 62;
             this.btnupdate.Text = "Update";
-            this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btnadd
@@ -494,14 +494,6 @@
             this.txtboxisim.TabIndex = 47;
             this.txtboxisim.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxisim_KeyUp);
             // 
-            // txtboxid
-            // 
-            this.txtboxid.Location = new System.Drawing.Point(764, 50);
-            this.txtboxid.Name = "txtboxid";
-            this.txtboxid.Size = new System.Drawing.Size(100, 22);
-            this.txtboxid.TabIndex = 46;
-            this.txtboxid.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtboxid_KeyUp);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -538,18 +530,9 @@
             this.label2.TabIndex = 42;
             this.label2.Text = "İsim";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(717, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 17);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "ID";
-            // 
             // btngeri
             // 
-            this.btngeri.BackColor = System.Drawing.Color.Red;
+            this.btngeri.BackColor = System.Drawing.Color.RoyalBlue;
             this.btngeri.Location = new System.Drawing.Point(937, 542);
             this.btngeri.Name = "btngeri";
             this.btngeri.Size = new System.Drawing.Size(102, 39);
@@ -612,12 +595,10 @@
             this.Controls.Add(this.textboxadres);
             this.Controls.Add(this.txtboxsoyadi);
             this.Controls.Add(this.txtboxisim);
-            this.Controls.Add(this.txtboxid);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -672,12 +653,10 @@
         private System.Windows.Forms.TextBox textboxadres;
         private System.Windows.Forms.TextBox txtboxsoyadi;
         private System.Windows.Forms.TextBox txtboxisim;
-        private System.Windows.Forms.TextBox txtboxid;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btngeri;
         private System.Windows.Forms.ComboBox cmbboxydb;
         private System.Windows.Forms.ListView lstListe;
