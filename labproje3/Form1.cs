@@ -42,7 +42,7 @@ namespace labproje3
             if (File.Exists(Yol))
             {
                 string[] satirlar = File.ReadAllLines(Yol);
-                string header = "ID,İsim,Soyadi,Adres,Aile,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Maas";
+                string header = "ID,İsim,Soyadi,Adres,Maas,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Aile";
 
                 if (satirlar.Length > 0)
                 {
@@ -95,7 +95,7 @@ namespace labproje3
             if (File.Exists(Yol))
             {
                 string[] satirlar = File.ReadAllLines(Yol);
-                string header = "ID,İsim,Soyadi,Adres,Aile,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Maas";
+                string header = "ID,İsim,Soyadi,Adres,Maas,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Aile";
 
                 if (satirlar.Length > 0)
                 {
@@ -104,7 +104,7 @@ namespace labproje3
                     for (int i = 0; i < satirlar.Length; i++)
                     {
                         string[] veriler = satirlar[i].Split(',');
-                        PersonelList[i] = Int32.Parse(veriler[10]);
+                        PersonelList[i] = Int32.Parse(veriler[4]);
                     }
                 }
             }
@@ -142,7 +142,7 @@ namespace labproje3
             for (int i = 0; i < PersonelList.Count(); i++)
             {
                 string[] maas = IsciBilgileri[i].Split(',');
-                maasdizi[i] = Convert.ToInt32(maas[10]);
+                maasdizi[i] = Convert.ToInt32(maas[4]);
             }
 
 
@@ -165,7 +165,7 @@ namespace labproje3
             if (veriler.Count() > 0)
             {
                 //string ilkSatir = satirlar[0];
-                string header = "ID,İsim,Soyadi,Adres,Aile,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Maas";
+                string header = "ID,İsim,Soyadi,Adres,Maas,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Aile";
                 string[] basliklar = header.Split(',');
                 foreach (string headerwords in basliklar)
                 {
@@ -291,7 +291,7 @@ namespace labproje3
                 for (int i = 0; i < PersonelList.Count(); i++)
                 {
                     string[] maas = IsciBilgileri[i].Split(',');
-                    maasdizi[i] = Convert.ToInt32(maas[10]);
+                    maasdizi[i] = Convert.ToInt32(maas[4]);
                 }
 
 
@@ -313,8 +313,8 @@ namespace labproje3
                 if (veriler.Count() > 0)
                 {
                     //string ilkSatir = satirlar[0];
-                    string header = "ID,İsim,Soyadi,Adres,Aile,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Maas";
-                    string[] basliklar = header.Split(',');
+                    string header = "ID,İsim,Soyadi,Adres,Maas,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Aile";
+                string[] basliklar = header.Split(',');
                     foreach (string headerwords in basliklar)
                     {
                         dt.Columns.Add(new DataColumn(headerwords));

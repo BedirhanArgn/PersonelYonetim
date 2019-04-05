@@ -82,10 +82,7 @@ namespace labproje3
                         reader.Close();
                         reader.Dispose();
                     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
                 }
                 else
                 {
@@ -136,7 +133,7 @@ namespace labproje3
                 isci.ailedurum = ucretaile;
                 isci.calisilanil = cmbboxil.SelectedIndex;
                 isci.Salary1 = ucrethesabi();
-                string yazdir = idsayisi.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + ucrettotal.ToString() + "," + imageyolu;
+                string yazdir = idsayisi.ToString() + "," + txtboxisim.Text.ToString() + "," + txtboxsoyadi.Text.ToString() + "," + textboxadres.Text.ToString() + "," + ucrettotal.ToString() + "," + cmbboxakademik.SelectedItem.ToString() + "," + cmbboxdeneyim.SelectedItem.ToString() + "," + cmbboxyöneticilik.SelectedItem.ToString() + "," + cmbboxydb.SelectedItem.ToString() + "," + cmbboxil.SelectedItem.ToString() + "," + cmbaile.SelectedItem.ToString() + "," + imageyolu;
                 dosyayaz(yazdir);
                 personel.Add(yazdir);
                 string[] sutun = new string[3];
@@ -158,11 +155,6 @@ namespace labproje3
             groupboxaile.Visible = false;
             listviewolustur();
             dosyaoku();
-<<<<<<< HEAD
-
-=======
-            
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
         }
         public double ucrethesabi()
         {
@@ -245,22 +237,18 @@ namespace labproje3
                 akademikderece = cmbboxakademik.Text;
                 isci.ustogrenim = Convert.ToDouble(cmbboxakademik.SelectedIndex.ToString());
                 yabancidil = cmbboxydb.Text;
-<<<<<<< HEAD
+
                 isci.ydbdil = Convert.ToDouble(cmbboxydb.SelectedIndex.ToString());
-=======
+
                 isci.ydbdil =Convert.ToDouble(cmbboxydb.SelectedIndex.ToString());
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
+
                 Yoneticilik = cmbboxyöneticilik.Text;
                 isci.yoneticilikgorevi = Convert.ToDouble(cmbboxyöneticilik.SelectedIndex.ToString());
                 ailedurum = cmbaile.Text;
                 isci.ailedurum = Convert.ToDouble(cmbaile.SelectedIndex.ToString());
                 adres = textboxadres.Text;
                 Form1 f1 = new Form1();
-<<<<<<< HEAD
 
-=======
-     
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
                 string[] sutun = new string[10];
                 int indx = 0;
                 string eskiid;
@@ -278,11 +266,10 @@ namespace labproje3
                         lstListe.Items.Insert(indx, new ListViewItem(sutun));
                         ucrethesabi();
                         idsayisi++;
-<<<<<<< HEAD
-                        personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ailedurum + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," + ucrettotal.ToString() + "," + isci.Imagepath);
-=======
-                        personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ailedurum + "," + akademikderece + "," + deneyim + "," + Yoneticilik+ "," + yabancidil + "," + calisilanil + "," + ucrettotal.ToString() + "," + isci.Imagepath);
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
+
+                        personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ucrettotal.ToString() + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," +ailedurum + "," + isci.Imagepath);
+
+                        personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ucrettotal.ToString() + "," + akademikderece + "," + deneyim + "," + Yoneticilik+ "," + yabancidil + "," + calisilanil + "," + ailedurum + "," + isci.Imagepath);
                         break;
                     }
                     indx++;
@@ -465,11 +452,7 @@ namespace labproje3
             }
             Environment.Exit(0);
         }
-<<<<<<< HEAD
 
-=======
-       
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
         private void txtboxisim_KeyUp(object sender, KeyEventArgs e)
         {
             name = txtboxisim.Text;
@@ -534,11 +517,11 @@ namespace labproje3
         }
         private void cmbaile_DropDownClosed(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             ailedurum = cmbaile.Text;
-=======
+
         ailedurum = cmbaile.Text;
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
+
         }
 
         private void cmbboxyöneticilik_DropDownClosed(object sender, EventArgs e)
@@ -558,10 +541,7 @@ namespace labproje3
             yabancidil = cmbboxydb.Text;
 
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
         private void cmbboxakademik_DropDownClosed(object sender, EventArgs e)
         {
             akademikderece = cmbboxakademik.Text;
@@ -584,7 +564,7 @@ namespace labproje3
                 }
             }
         }
-<<<<<<< HEAD
+
 
         private void cmbboxakademik_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -595,7 +575,6 @@ namespace labproje3
         {
 
         }
-=======
->>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
+
     }
 }
