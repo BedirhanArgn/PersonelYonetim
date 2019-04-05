@@ -311,7 +311,10 @@
             this.cmbboxyöneticilik.Name = "cmbboxyöneticilik";
             this.cmbboxyöneticilik.Size = new System.Drawing.Size(196, 24);
             this.cmbboxyöneticilik.TabIndex = 58;
+<<<<<<< HEAD
             this.cmbboxyöneticilik.SelectedIndexChanged += new System.EventHandler(this.cmbboxyöneticilik_SelectedIndexChanged);
+=======
+>>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
             this.cmbboxyöneticilik.DropDownClosed += new System.EventHandler(this.cmbboxyöneticilik_DropDownClosed);
             // 
             // label10
@@ -346,7 +349,10 @@
             this.cmbboxakademik.Name = "cmbboxakademik";
             this.cmbboxakademik.Size = new System.Drawing.Size(287, 24);
             this.cmbboxakademik.TabIndex = 54;
+<<<<<<< HEAD
             this.cmbboxakademik.SelectedIndexChanged += new System.EventHandler(this.cmbboxakademik_SelectedIndexChanged);
+=======
+>>>>>>> 5660ed88afea44e9a39dba4b26b13e0c7e37d5d2
             this.cmbboxakademik.DropDownClosed += new System.EventHandler(this.cmbboxakademik_DropDownClosed);
             // 
             // label7
