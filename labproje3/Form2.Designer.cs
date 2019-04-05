@@ -36,7 +36,6 @@
             this.groupboxcocuk = new System.Windows.Forms.GroupBox();
             this.chcbekar = new System.Windows.Forms.CheckBox();
             this.chc2cocuk = new System.Windows.Forms.CheckBox();
-            this.chc1cocuk = new System.Windows.Forms.CheckBox();
             this.chcocukyok = new System.Windows.Forms.CheckBox();
             this.groupboxdil = new System.Windows.Forms.GroupBox();
             this.rbingbilgisi = new System.Windows.Forms.RadioButton();
@@ -81,7 +80,7 @@
             this.groupboxaile.Controls.Add(this.chcbox06);
             this.groupboxaile.Controls.Add(this.chcbox18);
             this.groupboxaile.Controls.Add(this.chcbox718);
-            this.groupboxaile.Location = new System.Drawing.Point(386, 295);
+            this.groupboxaile.Location = new System.Drawing.Point(386, 315);
             this.groupboxaile.Name = "groupboxaile";
             this.groupboxaile.Size = new System.Drawing.Size(234, 140);
             this.groupboxaile.TabIndex = 66;
@@ -91,7 +90,7 @@
             // chcbox06
             // 
             this.chcbox06.AutoSize = true;
-            this.chcbox06.Location = new System.Drawing.Point(9, 55);
+            this.chcbox06.Location = new System.Drawing.Point(6, 21);
             this.chcbox06.Name = "chcbox06";
             this.chcbox06.Size = new System.Drawing.Size(77, 21);
             this.chcbox06.TabIndex = 33;
@@ -102,7 +101,7 @@
             // chcbox18
             // 
             this.chcbox18.AutoSize = true;
-            this.chcbox18.Location = new System.Drawing.Point(9, 109);
+            this.chcbox18.Location = new System.Drawing.Point(6, 75);
             this.chcbox18.Name = "chcbox18";
             this.chcbox18.Size = new System.Drawing.Size(51, 21);
             this.chcbox18.TabIndex = 35;
@@ -113,7 +112,7 @@
             // chcbox718
             // 
             this.chcbox718.AutoSize = true;
-            this.chcbox718.Location = new System.Drawing.Point(9, 82);
+            this.chcbox718.Location = new System.Drawing.Point(6, 48);
             this.chcbox718.Name = "chcbox718";
             this.chcbox718.Size = new System.Drawing.Size(59, 21);
             this.chcbox718.TabIndex = 34;
@@ -124,7 +123,7 @@
             // checkboxes
             // 
             this.checkboxes.AutoSize = true;
-            this.checkboxes.Location = new System.Drawing.Point(6, 127);
+            this.checkboxes.Location = new System.Drawing.Point(412, 132);
             this.checkboxes.Name = "checkboxes";
             this.checkboxes.Size = new System.Drawing.Size(157, 21);
             this.checkboxes.TabIndex = 3;
@@ -134,14 +133,12 @@
             // 
             // groupboxcocuk
             // 
-            this.groupboxcocuk.Controls.Add(this.checkboxes);
             this.groupboxcocuk.Controls.Add(this.chcbekar);
             this.groupboxcocuk.Controls.Add(this.chc2cocuk);
-            this.groupboxcocuk.Controls.Add(this.chc1cocuk);
             this.groupboxcocuk.Controls.Add(this.chcocukyok);
-            this.groupboxcocuk.Location = new System.Drawing.Point(425, 133);
+            this.groupboxcocuk.Location = new System.Drawing.Point(405, 165);
             this.groupboxcocuk.Name = "groupboxcocuk";
-            this.groupboxcocuk.Size = new System.Drawing.Size(177, 151);
+            this.groupboxcocuk.Size = new System.Drawing.Size(151, 117);
             this.groupboxcocuk.TabIndex = 65;
             this.groupboxcocuk.TabStop = false;
             this.groupboxcocuk.Text = "Çocuk Sayısı";
@@ -149,7 +146,7 @@
             // chcbekar
             // 
             this.chcbekar.AutoSize = true;
-            this.chcbekar.Location = new System.Drawing.Point(6, 100);
+            this.chcbekar.Location = new System.Drawing.Point(6, 74);
             this.chcbekar.Name = "chcbekar";
             this.chcbekar.Size = new System.Drawing.Size(67, 21);
             this.chcbekar.TabIndex = 48;
@@ -160,24 +157,13 @@
             // chc2cocuk
             // 
             this.chc2cocuk.AutoSize = true;
-            this.chc2cocuk.Location = new System.Drawing.Point(7, 75);
+            this.chc2cocuk.Location = new System.Drawing.Point(6, 48);
             this.chc2cocuk.Name = "chc2cocuk";
             this.chc2cocuk.Size = new System.Drawing.Size(127, 21);
             this.chc2cocuk.TabIndex = 47;
             this.chc2cocuk.Text = "2 ve daha fazla";
             this.chc2cocuk.UseVisualStyleBackColor = true;
             this.chc2cocuk.CheckedChanged += new System.EventHandler(this.chc2cocuk_CheckedChanged);
-            // 
-            // chc1cocuk
-            // 
-            this.chc1cocuk.AutoSize = true;
-            this.chc1cocuk.Location = new System.Drawing.Point(6, 48);
-            this.chc1cocuk.Name = "chc1cocuk";
-            this.chc1cocuk.Size = new System.Drawing.Size(79, 21);
-            this.chc1cocuk.TabIndex = 46;
-            this.chc1cocuk.Text = "1 çocuk";
-            this.chc1cocuk.UseVisualStyleBackColor = true;
-            this.chc1cocuk.CheckedChanged += new System.EventHandler(this.chc1cocuk_CheckedChanged);
             // 
             // chcocukyok
             // 
@@ -268,7 +254,7 @@
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(94, 50);
             this.btnupdate.TabIndex = 62;
-            this.btnupdate.Text = "Update";
+            this.btnupdate.Text = "Güncelle";
             this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
@@ -279,7 +265,7 @@
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(94, 47);
             this.btnadd.TabIndex = 61;
-            this.btnadd.Text = "Add";
+            this.btnadd.Text = "Ekle";
             this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
@@ -297,7 +283,7 @@
             this.cmbaile.Size = new System.Drawing.Size(196, 24);
             this.cmbaile.TabIndex = 60;
             this.cmbaile.SelectedIndexChanged += new System.EventHandler(this.cmbaile_SelectedIndexChanged);
-            this.cmbaile.TextChanged += new System.EventHandler(this.cmbaile_TextChanged);
+            this.cmbaile.DropDownClosed += new System.EventHandler(this.cmbaile_DropDownClosed);
             // 
             // label11
             // 
@@ -319,12 +305,14 @@
             "Bilgi İşlem Sorumlusu/Müdürü (Bilgi İşlem biriminde en çok 5bilişim personeli var" +
                 "sa)",
             "Bilgi İşlem Sorumlusu/Müdürü (Bilgi İşlem biriminde 5\'ten çok bilişim personeli v" +
-                "arsa)"});
+                "arsa)",
+            "Yöneticilik Görevi Yok"});
             this.cmbboxyöneticilik.Location = new System.Drawing.Point(488, 53);
             this.cmbboxyöneticilik.Name = "cmbboxyöneticilik";
             this.cmbboxyöneticilik.Size = new System.Drawing.Size(196, 24);
             this.cmbboxyöneticilik.TabIndex = 58;
-            this.cmbboxyöneticilik.TextChanged += new System.EventHandler(this.cmbboxyöneticilik_TextChanged);
+            this.cmbboxyöneticilik.SelectedIndexChanged += new System.EventHandler(this.cmbboxyöneticilik_SelectedIndexChanged);
+            this.cmbboxyöneticilik.DropDownClosed += new System.EventHandler(this.cmbboxyöneticilik_DropDownClosed);
             // 
             // label10
             // 
@@ -352,12 +340,14 @@
             "Meslek alanı ile ilgili doktora",
             "Meslek alanı ile ilgili doçentlik",
             "Meslek alanı ile ilgili olmayan yüksek lisans",
-            "Meslek alanı ile ilgili olmayan doktora/doçentlik"});
+            "Meslek alanı ile ilgili olmayan doktora/doçentlik",
+            "Herhangi bir Akademik düzey yok"});
             this.cmbboxakademik.Location = new System.Drawing.Point(752, 292);
             this.cmbboxakademik.Name = "cmbboxakademik";
             this.cmbboxakademik.Size = new System.Drawing.Size(287, 24);
             this.cmbboxakademik.TabIndex = 54;
-            this.cmbboxakademik.TextChanged += new System.EventHandler(this.cmbboxakademik_TextChanged);
+            this.cmbboxakademik.SelectedIndexChanged += new System.EventHandler(this.cmbboxakademik_SelectedIndexChanged);
+            this.cmbboxakademik.DropDownClosed += new System.EventHandler(this.cmbboxakademik_DropDownClosed);
             // 
             // label7
             // 
@@ -388,7 +378,7 @@
             this.cmbboxil.Name = "cmbboxil";
             this.cmbboxil.Size = new System.Drawing.Size(182, 24);
             this.cmbboxil.TabIndex = 52;
-            this.cmbboxil.TextChanged += new System.EventHandler(this.cmbboxil_TextChanged);
+            this.cmbboxil.DropDownClosed += new System.EventHandler(this.cmbboxil_DropDownClosed);
             // 
             // label6
             // 
@@ -412,7 +402,7 @@
             this.cmbboxdeneyim.Name = "cmbboxdeneyim";
             this.cmbboxdeneyim.Size = new System.Drawing.Size(182, 24);
             this.cmbboxdeneyim.TabIndex = 50;
-            this.cmbboxdeneyim.TextChanged += new System.EventHandler(this.cmbboxdeneyim_TextChanged);
+            this.cmbboxdeneyim.DropDownClosed += new System.EventHandler(this.cmbboxdeneyim_DropDownClosed);
             // 
             // textboxadres
             // 
@@ -491,13 +481,14 @@
             this.cmbboxydb.Items.AddRange(new object[] {
             "Belgelendirilmiş İngilizce bilgisi ",
             "İngilizce eğitim veren okul mezuniyeti",
-            "Belgelendirilmiş diğer yabancı dil bilgisi"});
+            "Belgelendirilmiş diğer yabancı dil bilgisi",
+            "Yabancı dil bilgisi yok"});
             this.cmbboxydb.Location = new System.Drawing.Point(813, 335);
             this.cmbboxydb.Name = "cmbboxydb";
             this.cmbboxydb.Size = new System.Drawing.Size(199, 24);
             this.cmbboxydb.TabIndex = 68;
             this.cmbboxydb.SelectedIndexChanged += new System.EventHandler(this.cmbboxydb_SelectedIndexChanged);
-            this.cmbboxydb.TextChanged += new System.EventHandler(this.cmbboxydb_TextChanged);
+            this.cmbboxydb.DropDownClosed += new System.EventHandler(this.cmbboxydb_DropDownClosed);
             // 
             // lstListe
             // 
@@ -541,7 +532,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1086, 593);
+            this.Controls.Add(this.checkboxes);
             this.Controls.Add(this.picturestuff);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstListe);
@@ -595,7 +588,6 @@
         private System.Windows.Forms.GroupBox groupboxcocuk;
         private System.Windows.Forms.CheckBox chcbekar;
         private System.Windows.Forms.CheckBox chc2cocuk;
-        private System.Windows.Forms.CheckBox chc1cocuk;
         private System.Windows.Forms.CheckBox chcocukyok;
         private System.Windows.Forms.GroupBox groupboxdil;
         private System.Windows.Forms.RadioButton rbingbilgisi;

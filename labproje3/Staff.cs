@@ -91,9 +91,13 @@ namespace labproje3
                 {
                     return 0.05;
                 }
-                else
+                else if(Ustogrenim==4)
                 {
                     return 0.15;
+                }
+                else
+                {
+                    return 0;
                 }
 
 
@@ -112,9 +116,13 @@ namespace labproje3
                 {
                     return 0.20;
                 }
-                else
+                else if(Ydbdil==2)
                 {
                     return 0.05;
+                }
+                else
+                {
+                    return 0;
                 }
 
             }
@@ -144,8 +152,12 @@ namespace labproje3
                 {
                     return 0.40;
                 }
-                else {                
+                else if(Yoneticilikgorevi==5){                
                     return 0.60;
+                }
+                else
+                {
+                    return 0;
                 }
             }
             set { Yoneticilikgorevi = Convert.ToInt32(value); }
