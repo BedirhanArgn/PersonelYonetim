@@ -311,7 +311,6 @@
             this.cmbboxyöneticilik.Name = "cmbboxyöneticilik";
             this.cmbboxyöneticilik.Size = new System.Drawing.Size(196, 24);
             this.cmbboxyöneticilik.TabIndex = 58;
-            this.cmbboxyöneticilik.SelectedIndexChanged += new System.EventHandler(this.cmbboxyöneticilik_SelectedIndexChanged);
             this.cmbboxyöneticilik.DropDownClosed += new System.EventHandler(this.cmbboxyöneticilik_DropDownClosed);
             // 
             // label10
@@ -346,7 +345,6 @@
             this.cmbboxakademik.Name = "cmbboxakademik";
             this.cmbboxakademik.Size = new System.Drawing.Size(287, 24);
             this.cmbboxakademik.TabIndex = 54;
-            this.cmbboxakademik.SelectedIndexChanged += new System.EventHandler(this.cmbboxakademik_SelectedIndexChanged);
             this.cmbboxakademik.DropDownClosed += new System.EventHandler(this.cmbboxakademik_DropDownClosed);
             // 
             // label7
@@ -466,7 +464,7 @@
             // 
             // btngeri
             // 
-            this.btngeri.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btngeri.BackColor = System.Drawing.Color.Snow;
             this.btngeri.Location = new System.Drawing.Point(937, 542);
             this.btngeri.Name = "btngeri";
             this.btngeri.Size = new System.Drawing.Size(102, 39);
@@ -532,7 +530,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1086, 593);
             this.Controls.Add(this.checkboxes);
             this.Controls.Add(this.picturestuff);
@@ -565,6 +563,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupboxaile.ResumeLayout(false);
             this.groupboxaile.PerformLayout();

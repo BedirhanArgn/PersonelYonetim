@@ -344,7 +344,18 @@ namespace labproje3
                 }
             }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult giriskapanis = MessageBox.Show("Programı kapatmak istediğinizden eminmisiniz ? ", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (giriskapanis == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
+
+            }
+            Environment.Exit(0);
         }
+    }
     }
 
 

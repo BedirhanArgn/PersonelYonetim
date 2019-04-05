@@ -382,7 +382,7 @@ namespace labproje3
         {
             Form1 f1 = new Form1();
             f1.vericek();
-            this.Close();
+            this.Visible = false;
 
         }
         private void checkboxes_CheckedChanged_1(object sender, EventArgs e)
@@ -443,14 +443,7 @@ namespace labproje3
         private void Form2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
-            DialogResult giriskapanis = MessageBox.Show("Programı kapatmak istediğinizden eminmisiniz ? ", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (giriskapanis == DialogResult.No)
-            {
-                e.Cancel = true;
-                return;
-
-            }
-            Environment.Exit(0);
+           
         }
 
         private void txtboxisim_KeyUp(object sender, KeyEventArgs e)
@@ -566,15 +559,17 @@ namespace labproje3
         }
 
 
-        private void cmbboxakademik_SelectedIndexChanged(object sender, EventArgs e)
+       
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
+            DialogResult giriskapanis = MessageBox.Show("Programı kapatmak istediğinizden eminmisiniz ? ", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (giriskapanis == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
 
+            }
+            Environment.Exit(0);
         }
-
-        private void cmbboxyöneticilik_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
