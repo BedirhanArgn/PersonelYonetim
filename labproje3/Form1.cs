@@ -22,7 +22,6 @@ namespace labproje3
         string[] veriler = new string[100];
         string sJSONResponse;
         Form2 f2 = new Form2();
-
         public static string yol = "stuff.csv";
         public Form1()
         {
@@ -39,7 +38,6 @@ namespace labproje3
         }
         public void vericek()
         {
-
             DataTable dt = new DataTable();
             if (File.Exists(Yol))
             {
@@ -140,7 +138,6 @@ namespace labproje3
             get { return yol; }
             set { yol = value; }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -244,7 +241,6 @@ namespace labproje3
             return Result;
 
         }
-
         public int[] Merge(int[] Left, int[] Right)
         {
             //dataGridView1.DataSource = null;
@@ -291,7 +287,6 @@ namespace labproje3
             }
             return Result;
         }
-
         private void btnazalan_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
@@ -352,7 +347,6 @@ namespace labproje3
                     dataGridView1.DataSource = dt;
                 }
             }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult giriskapanis = MessageBox.Show("Programı kapatmak istediğinizden eminmisiniz ? ", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -364,7 +358,6 @@ namespace labproje3
             }
             Environment.Exit(0);
         }
-
         private void btnjson_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();

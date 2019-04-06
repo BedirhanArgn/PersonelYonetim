@@ -70,6 +70,7 @@
             this.picturestuff = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.chcboxyarizaman = new System.Windows.Forms.CheckBox();
             this.groupboxaile.SuspendLayout();
             this.groupboxcocuk.SuspendLayout();
             this.groupboxdil.SuspendLayout();
@@ -534,12 +535,24 @@
             this.progressBar1.Size = new System.Drawing.Size(234, 33);
             this.progressBar1.TabIndex = 72;
             // 
+            // chcboxyarizaman
+            // 
+            this.chcboxyarizaman.AutoSize = true;
+            this.chcboxyarizaman.Location = new System.Drawing.Point(488, 22);
+            this.chcboxyarizaman.Name = "chcboxyarizaman";
+            this.chcboxyarizaman.Size = new System.Drawing.Size(109, 21);
+            this.chcboxyarizaman.TabIndex = 73;
+            this.chcboxyarizaman.Text = "Yarı Zamanlı";
+            this.chcboxyarizaman.UseVisualStyleBackColor = true;
+            this.chcboxyarizaman.CheckedChanged += new System.EventHandler(this.chcboxyarizaman_CheckedChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1086, 593);
+            this.Controls.Add(this.chcboxyarizaman);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.checkboxes);
             this.Controls.Add(this.picturestuff);
@@ -630,5 +643,6 @@
         private System.Windows.Forms.PictureBox picturestuff;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.CheckBox chcboxyarizaman;
     }
 }
