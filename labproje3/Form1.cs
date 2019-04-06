@@ -15,6 +15,7 @@ namespace labproje3
     public partial class Form1 : Form
     {
         int listeninboyutu = 0;
+        int sayac = 0;
         int[] PersonelList;
         string[] IsciBilgileri = new string[100];
         List<jsonclass> json = new List<jsonclass>(); 
@@ -38,12 +39,19 @@ namespace labproje3
         }
         public void vericek()
         {
+            sayac++;
+            listeninboyutu = 0;
+         
             DataTable dt = new DataTable();
             if (File.Exists(Yol))
             {
                 string[] satirlar = File.ReadAllLines(Yol);
                 string header = "ID,İsim,Soyadi,Adres,Maas,Akademik,Deneyim,Yöneticilik Görevi,Yabancı Dil,Çalışılan İl,Aile";
-
+                if(sayac==2)
+                {
+                    json.Clear();
+                    sJSONResponse = "";
+                }
                 if (satirlar.Length > 0)
                 {
                     //string ilkSatir = satirlar[0];
@@ -57,21 +65,20 @@ namespace labproje3
                         listeninboyutu++;
                         DataRow dr = dt.NewRow();
                         string[] veriler = satirlar[i].Split(',');
-                        for(int j=0;j<satirlar.Length;j++)
-                        {
+                        
                             json.Add(new jsonclass { Id = veriler[0], Adi = veriler[1], Soyadi = veriler[2],Adresi=veriler[3],Maas = veriler[4], Akademik = veriler[5], Deneyimm = veriler[6], Yongorev = veriler[7], Yabancidill = veriler[8], Il = veriler[9], Aile = veriler[10] });
-                        }
+                        
                         IsciBilgileri[i] = satirlar[i];
                         int indexer = 0;
                         foreach (string headerword in basliklar)
                         {
+
                             dr[headerword] = veriler[indexer++];
                         }
                         dt.Rows.Add(dr);
-                    }
-                     sJSONResponse = JsonConvert.SerializeObject(json);
+                    }                                       
+                    sJSONResponse = JsonConvert.SerializeObject(json);                 
 
-                    Console.WriteLine(sJSONResponse);
                     PersonelList = new int[listeninboyutu];
                 }
                 else
@@ -140,10 +147,10 @@ namespace labproje3
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            kisisayisibul();
 
             dataGridView1.DataSource = null;
-            int sayac = 0;
-
+          
             PersonelList = MergeSort(PersonelList);
             for (int i = 0; i < PersonelList.Count(); i++)
             {
@@ -289,6 +296,7 @@ namespace labproje3
         }
         private void btnazalan_Click(object sender, EventArgs e)
         {
+            kisisayisibul();
             dataGridView1.DataSource = null;
             PersonelList = MergeSort(PersonelList);
             Array.Reverse(PersonelList);
