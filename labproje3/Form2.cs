@@ -120,6 +120,7 @@ namespace labproje3
         {
             try
             {
+                progressBar1.Visible = true;
                 idsayisi++;
                 isci.ID = idsayisi.ToString();
                 isci.Imagepath = imageyolu;
@@ -141,6 +142,7 @@ namespace labproje3
                 sutun[1] = txtboxisim.Text;
                 sutun[2] = txtboxsoyadi.Text;
                 lstListe.Items.Add(new ListViewItem(sutun));
+                progressBar1.Value = 100;
                 MessageBox.Show("Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
@@ -153,6 +155,7 @@ namespace labproje3
             groupboxdil.Visible = false;
             groupboxcocuk.Visible = false;
             groupboxaile.Visible = false;
+            progressBar1.Visible = false;
             listviewolustur();
             dosyaoku();
         }
@@ -240,7 +243,7 @@ namespace labproje3
 
                 isci.ydbdil = Convert.ToDouble(cmbboxydb.SelectedIndex.ToString());
 
-                isci.ydbdil =Convert.ToDouble(cmbboxydb.SelectedIndex.ToString());
+                isci.ydbdil = Convert.ToDouble(cmbboxydb.SelectedIndex.ToString());
 
                 Yoneticilik = cmbboxyöneticilik.Text;
                 isci.yoneticilikgorevi = Convert.ToDouble(cmbboxyöneticilik.SelectedIndex.ToString());
@@ -267,9 +270,9 @@ namespace labproje3
                         ucrethesabi();
                         idsayisi++;
 
-                        personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ucrettotal.ToString() + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," +ailedurum + "," + isci.Imagepath);
+                        personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ucrettotal.ToString() + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," + ailedurum + "," + isci.Imagepath);
 
-                        personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ucrettotal.ToString() + "," + akademikderece + "," + deneyim + "," + Yoneticilik+ "," + yabancidil + "," + calisilanil + "," + ailedurum + "," + isci.Imagepath);
+                        personel.Insert(indx, eskiid + "," + name + "," + surname + "," + adres + "," + ucrettotal.ToString() + "," + akademikderece + "," + deneyim + "," + Yoneticilik + "," + yabancidil + "," + calisilanil + "," + ailedurum + "," + isci.Imagepath);
                         break;
                     }
                     indx++;
@@ -440,11 +443,7 @@ namespace labproje3
                 indx++;
             }
         }
-        private void Form2_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
 
-           
-        }
 
         private void txtboxisim_KeyUp(object sender, KeyEventArgs e)
         {
@@ -513,7 +512,7 @@ namespace labproje3
 
             ailedurum = cmbaile.Text;
 
-        ailedurum = cmbaile.Text;
+            ailedurum = cmbaile.Text;
 
         }
 
@@ -559,7 +558,7 @@ namespace labproje3
         }
 
 
-       
+
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult giriskapanis = MessageBox.Show("Programı kapatmak istediğinizden eminmisiniz ? ", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -567,9 +566,16 @@ namespace labproje3
             {
                 e.Cancel = true;
                 return;
+            }
+            try
+            {
+                Environment.Exit(0);
+            }
+            catch
+            {
 
             }
-            Environment.Exit(0);
+
         }
     }
 }

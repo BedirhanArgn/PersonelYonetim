@@ -45,3 +45,6 @@ C:\Users\argunpc\Desktop\wallpapers\labproje3-v3\labproje3\obj\Debug\labproje3.P
 C:\Users\argunpc\Desktop\wallpapers\labproje3-v3\labproje3\obj\Debug\labproje3.csproj.GenerateResource.Cache
 C:\Users\argunpc\Desktop\wallpapers\labproje3-v3\labproje3\obj\Debug\labproje3.exe
 C:\Users\argunpc\Desktop\wallpapers\labproje3-v3\labproje3\obj\Debug\labproje3.pdb
+C:\Users\argunpc\Desktop\wallpapers\labproje3-v3\labproje3\bin\Debug\Newtonsoft.Json.dll
+C:\Users\argunpc\Desktop\wallpapers\labproje3-v3\labproje3\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\argunpc\Desktop\wallpapers\labproje3-v3\labproje3\bin\Debug\Newtonsoft.Json.xml

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Collections;
+using Newtonsoft.Json;
 namespace labproje3
 {
     public partial class Form1 : Form
@@ -16,9 +17,10 @@ namespace labproje3
         int listeninboyutu = 0;
         int[] PersonelList;
         string[] IsciBilgileri = new string[100];
+        List<jsonclass> json = new List<jsonclass>(); 
         int[] maasdizi = new int[100];
         string[] veriler = new string[100];
-
+        string sJSONResponse;
         Form2 f2 = new Form2();
 
         public static string yol = "stuff.csv";
@@ -57,6 +59,10 @@ namespace labproje3
                         listeninboyutu++;
                         DataRow dr = dt.NewRow();
                         string[] veriler = satirlar[i].Split(',');
+                        for(int j=0;j<satirlar.Length;j++)
+                        {
+                            json.Add(new jsonclass { Id = veriler[0], Adi = veriler[1], Soyadi = veriler[2],Adresi=veriler[3],Maas = veriler[4], Akademik = veriler[5], Deneyimm = veriler[6], Yongorev = veriler[7], Yabancidill = veriler[8], Il = veriler[9], Aile = veriler[10] });
+                        }
                         IsciBilgileri[i] = satirlar[i];
                         int indexer = 0;
                         foreach (string headerword in basliklar)
@@ -65,6 +71,9 @@ namespace labproje3
                         }
                         dt.Rows.Add(dr);
                     }
+                     sJSONResponse = JsonConvert.SerializeObject(json);
+
+                    Console.WriteLine(sJSONResponse);
                     PersonelList = new int[listeninboyutu];
                 }
                 else
@@ -354,6 +363,20 @@ namespace labproje3
 
             }
             Environment.Exit(0);
+        }
+
+        private void btnjson_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Metin Dosyası|*.json";
+            save.OverwritePrompt = true;
+            save.CreatePrompt = true;
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter Kayit = new StreamWriter(save.FileName);
+                Kayit.WriteLine(sJSONResponse);
+                Kayit.Close();
+            }
         }
     }
     }

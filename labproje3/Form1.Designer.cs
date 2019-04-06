@@ -33,6 +33,7 @@
             this.btncsv = new System.Windows.Forms.Button();
             this.btnartan = new System.Windows.Forms.Button();
             this.btnazalan = new System.Windows.Forms.Button();
+            this.btnjson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // 
             this.btnartan.Location = new System.Drawing.Point(279, 464);
             this.btnartan.Name = "btnartan";
-            this.btnartan.Size = new System.Drawing.Size(101, 49);
+            this.btnartan.Size = new System.Drawing.Size(88, 49);
             this.btnartan.TabIndex = 2;
             this.btnartan.Text = "Artan Sıralama";
             this.btnartan.UseVisualStyleBackColor = true;
@@ -88,12 +89,23 @@
             this.btnazalan.UseVisualStyleBackColor = true;
             this.btnazalan.Click += new System.EventHandler(this.btnazalan_Click);
             // 
+            // btnjson
+            // 
+            this.btnjson.Location = new System.Drawing.Point(539, 464);
+            this.btnjson.Name = "btnjson";
+            this.btnjson.Size = new System.Drawing.Size(86, 49);
+            this.btnjson.TabIndex = 4;
+            this.btnjson.Text = "Json\'a Çevir";
+            this.btnjson.UseVisualStyleBackColor = true;
+            this.btnjson.Click += new System.EventHandler(this.btnjson_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1423, 575);
+            this.Controls.Add(this.btnjson);
             this.Controls.Add(this.btnazalan);
             this.Controls.Add(this.btnartan);
             this.Controls.Add(this.btncsv);
@@ -114,6 +126,7 @@
         private System.Windows.Forms.Button btncsv;
         private System.Windows.Forms.Button btnartan;
         private System.Windows.Forms.Button btnazalan;
+        private System.Windows.Forms.Button btnjson;
     }
 }
 
