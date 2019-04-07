@@ -437,12 +437,12 @@ namespace labproje3
                         txtboxisim.Text = bolunecekkelime[1];
                         txtboxsoyadi.Text = bolunecekkelime[2];
                         textboxadres.Text = bolunecekkelime[3];
-                        cmbaile.Text = bolunecekkelime[11];
-                        cmbboxakademik.Text = bolunecekkelime[6];
-                        cmbboxdeneyim.Text = bolunecekkelime[7];
-                        cmbboxyöneticilik.Text = bolunecekkelime[8];
-                        cmbboxydb.Text = bolunecekkelime[9];
-                        cmbboxil.Text = bolunecekkelime[10];
+                        cmbaile.Text = bolunecekkelime[10];
+                        cmbboxakademik.Text = bolunecekkelime[5];
+                        cmbboxdeneyim.Text = bolunecekkelime[6];
+                        cmbboxyöneticilik.Text = bolunecekkelime[7];
+                        cmbboxydb.Text = bolunecekkelime[8];
+                        cmbboxil.Text = bolunecekkelime[9];
                         asgarimaasi = bolunecekkelime[4];
                         imageyolu = bolunecekkelime[11];
                         resimyukle(imageyolu);
