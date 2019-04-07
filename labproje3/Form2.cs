@@ -444,7 +444,7 @@ namespace labproje3
                         cmbboxydb.Text = bolunecekkelime[9];
                         cmbboxil.Text = bolunecekkelime[10];
                         asgarimaasi = bolunecekkelime[4];
-                        imageyolu = bolunecekkelime[12];
+                        imageyolu = bolunecekkelime[11];
                         resimyukle(imageyolu);
                     }
                     indx++;

@@ -128,17 +128,17 @@ namespace labproje3
             OpenFileDialog open = new OpenFileDialog();
             open.Title = "Dosyayı Seçin";
             open.Filter = "Text File|*.csv";
-            //open.InitialDirectory = @"D:\";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 yol = open.FileName;
-            }
-            if (File.Exists(yol))
-            {
-
-                yol = open.FileName;
                 vericek();
             }
+            //if (File.Exists(yol))
+            //{
+
+            //    yol = open.FileName;
+            //    vericek();
+            //}
         }
         public string Yol
         {
